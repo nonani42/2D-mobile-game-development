@@ -15,6 +15,7 @@ namespace CarGame
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUI);
             _view.Init(StartGame);
+            _view.InitSettings(GoToSettings);
         }
 
         private MainMenuView LoadView(Transform placeForUI)
@@ -26,5 +27,6 @@ namespace CarGame
         }
 
         private void StartGame() => _profilePlayer.CurrentState.Value = GameState.Game;
+        private void GoToSettings() => _profilePlayer.CurrentState.Value = GameState.Settings;
     }
 }
