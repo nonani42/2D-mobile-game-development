@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CarGame
@@ -14,8 +13,7 @@ namespace CarGame
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUI);
-            _view.Init(StartGame);
-            _view.InitSettings(GoToSettings);
+            _view.Init(StartGame, GoToSettings);
         }
 
         private MainMenuView LoadView(Transform placeForUI)

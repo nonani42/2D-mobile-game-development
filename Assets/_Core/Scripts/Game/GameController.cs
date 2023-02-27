@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CarGame
+﻿namespace CarGame
 {
     internal class GameController : BaseController
     {

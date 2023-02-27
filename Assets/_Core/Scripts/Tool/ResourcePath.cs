@@ -1,6 +1,9 @@
-﻿public class ResourcePath
+﻿namespace CarGame
 {
-    public readonly string PathResource;
+    public class ResourcePath
+    {
+        public readonly string PathResource;
 
-    public ResourcePath(string pathResource) => PathResource = pathResource;
+        public ResourcePath(string pathResource) => PathResource = pathResource;
+    }
 }

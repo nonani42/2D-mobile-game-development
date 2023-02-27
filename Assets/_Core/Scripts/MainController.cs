@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 namespace CarGame
 {
@@ -29,6 +25,7 @@ namespace CarGame
         {
             _mainMenuController?.Dispose();
             _gameController?.Dispose();
+            _settingsController?.Dispose();
 
             _profilePlayer.CurrentState.UnsubscribeOnChange(OnChangeGameState);
         }
