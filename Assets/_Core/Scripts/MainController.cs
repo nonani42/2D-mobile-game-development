@@ -11,7 +11,6 @@ namespace CarGame
         private GameController _gameController;
         private SettingsController _settingsController;
 
-
         public MainController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
             _placeForUI = placeForUI;
@@ -35,14 +34,17 @@ namespace CarGame
             switch (state)
             {
                 case (GameState.Game):
+                    UnityAdsService.instance.InterstitialPlayer.Play();
                     _gameController = new GameController(_profilePlayer);
                     _mainMenuController?.Dispose();
                     _settingsController?.Dispose();
+                    AnalyticsManager.instance.SendLevelStarted();
                     break;
                 case (GameState.Start):
                     _mainMenuController = new MainMenuController(_placeForUI, _profilePlayer);
                     _gameController?.Dispose();
                     _settingsController?.Dispose();
+                    AnalyticsManager.instance.SendMainMenuOpened();
                     break;
                 case (GameState.Settings):
                     _settingsController = new SettingsController(_placeForUI, _profilePlayer);

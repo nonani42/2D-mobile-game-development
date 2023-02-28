@@ -4,7 +4,7 @@ namespace CarGame
 {
     internal class InputGameController : BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("KeyboardMove");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Input/EndlessMove");
         private readonly BaseInputView _view;
 
         public InputGameController(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, CarModel car)

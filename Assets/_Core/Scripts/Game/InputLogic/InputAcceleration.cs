@@ -33,8 +33,8 @@ namespace CarGame
             const float normalizedMagnitude = 1f;
 
             Vector3 direction = Vector3.zero;
-            direction.x = -Input.acceleration.y;
-            direction.z = Input.acceleration.z;
+            direction.x = Input.acceleration.x;
+            direction.z = -Input.acceleration.x;
 
             if(direction.sqrMagnitude > normalizedMagnitude)
             {

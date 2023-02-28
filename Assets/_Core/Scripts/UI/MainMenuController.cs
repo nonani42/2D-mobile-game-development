@@ -13,7 +13,7 @@ namespace CarGame
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUI);
-            _view.Init(StartGame, GoToSettings);
+            _view.Init(StartGame, GoToSettings, WatchRewardedAd, Buy);
         }
 
         private MainMenuView LoadView(Transform placeForUI)
@@ -26,5 +26,8 @@ namespace CarGame
 
         private void StartGame() => _profilePlayer.CurrentState.Value = GameState.Game;
         private void GoToSettings() => _profilePlayer.CurrentState.Value = GameState.Settings;
+        private void WatchRewardedAd() => UnityAdsService.instance.RewardedPlayer.Play();
+        private void Buy() => IAPService.instance.Buy("elephant01");
+
     }
 }
