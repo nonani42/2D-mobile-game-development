@@ -15,6 +15,8 @@
 
             CarController carController = new CarController();
             AddController(carController);
+
+            AnalyticsManager.instance.SendLevelStarted();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace CarGame
 
         public void Transaction(UnityEngine.Purchasing.Product product)
         {
-            Debug.Log($"Transaction: {product.definition.storeSpecificId}, {product.metadata.localizedPrice}, {product.metadata.isoCurrencyCode}"); 
+            Debug.Log($"Transaction: {product.definition.id}, {product.metadata.localizedPrice}, {product.metadata.isoCurrencyCode}"); 
             for (int i = 0; i < _services.Length; i++)
                 _services[i].Transaction(product);
         }

@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e535dddcfcf56419ff5e3b4f58ca31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _productId: elephant01
   _startBtn: {fileID: 315532611085353152}
   _settingsBtn: {fileID: 9122855783965944957}
   _buyBtn: {fileID: 5679497727072365084}
