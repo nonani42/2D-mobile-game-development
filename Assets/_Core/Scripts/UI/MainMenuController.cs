@@ -5,7 +5,7 @@ namespace CarGame
 {
     internal class MainMenuController : BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("MainMenu");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/MainMenu");
         private readonly ProfilePlayer _profilePlayer;
         private readonly MainMenuView _view;
 
@@ -13,7 +13,7 @@ namespace CarGame
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUI);
-            _view.Init(StartGame, GoToSettings, WatchRewardedAd, Buy);
+            _view.Init(StartGame, GoToSettings, WatchRewardedAd, Buy, GoToShed);
 
             AnalyticsManager.instance.SendMainMenuOpened();
         }
@@ -30,6 +30,6 @@ namespace CarGame
         private void GoToSettings() => _profilePlayer.CurrentState.Value = GameState.Settings;
         private void WatchRewardedAd() => UnityAdsService.instance.RewardedPlayer.Play();
         private void Buy(string productId) => IAPService.instance.Buy(productId);
-
+        private void GoToShed() => _profilePlayer.CurrentState.Value = GameState.Shed;
     }
 }

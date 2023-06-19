@@ -5,7 +5,7 @@ namespace CarGame
 {
     internal class SettingsController : BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("Settings");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/SettingsMenu");
         private readonly ProfilePlayer _profilePlayer;
         private readonly SettingsView _view;
 

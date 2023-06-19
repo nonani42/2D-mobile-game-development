@@ -2,7 +2,7 @@
 
 namespace CarGame
 {
-    public class TapeBackgroundController : BaseController
+    internal class TapeBackgroundController : BaseController
     {
         private readonly ResourcePath _resourcePath = new ResourcePath("Background");
 

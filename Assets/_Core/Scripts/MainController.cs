@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Features.Shed;
+using UnityEngine;
 
 namespace CarGame
 {
@@ -10,6 +11,8 @@ namespace CarGame
         private MainMenuController _mainMenuController;
         private GameController _gameController;
         private SettingsController _settingsController;
+        private ShedController _shedController;
+
 
         public MainController(Transform placeForUI, ProfilePlayer profilePlayer)
         {
@@ -38,21 +41,32 @@ namespace CarGame
                     _gameController = new GameController(_profilePlayer);
                     _mainMenuController?.Dispose();
                     _settingsController?.Dispose();
+                    _shedController?.Dispose();
                     break;
                 case (GameState.Start):
                     _mainMenuController = new MainMenuController(_placeForUI, _profilePlayer);
                     _gameController?.Dispose();
                     _settingsController?.Dispose();
+                    _shedController?.Dispose();
                     break;
                 case (GameState.Settings):
                     _settingsController = new SettingsController(_placeForUI, _profilePlayer);
                     _mainMenuController?.Dispose();
                     _gameController?.Dispose();
+                    _shedController?.Dispose();
                     break;
+                case (GameState.Shed):
+                    _shedController = new ShedController(_placeForUI, _profilePlayer);
+                    _mainMenuController?.Dispose();
+                    _gameController?.Dispose();
+                    _settingsController?.Dispose();
+                    break;
+
                 default:
                     _gameController?.Dispose();
                     _mainMenuController?.Dispose();
                     _settingsController?.Dispose();
+                    _shedController?.Dispose();
                     Debug.Log("No controller for this state.");
                     break;
             }

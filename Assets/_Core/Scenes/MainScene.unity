@@ -670,5 +670,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeForUI: {fileID: 686931106}
-  _adsService: {fileID: 472965763}
-  _iapService: {fileID: 1417957152}

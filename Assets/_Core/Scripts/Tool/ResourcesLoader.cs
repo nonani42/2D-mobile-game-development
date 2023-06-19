@@ -4,8 +4,13 @@ namespace CarGame
 {
     public static class ResourcesLoader
     {
-        public static Sprite LoadSprite(ResourcePath path) => Resources.Load<Sprite>(path.PathResource);
+        public static Sprite LoadSprite(ResourcePath path) =>
+            LoadObject<Sprite>(path);
 
-        public static GameObject LoadPrefab(ResourcePath path) => Resources.Load<GameObject>(path.PathResource);
+        public static GameObject LoadPrefab(ResourcePath path) =>
+            LoadObject<GameObject>(path);
+
+        public static TObject LoadObject<TObject>(ResourcePath path) where TObject : Object =>
+            Resources.Load<TObject>(path.PathResource);
     }
 }
