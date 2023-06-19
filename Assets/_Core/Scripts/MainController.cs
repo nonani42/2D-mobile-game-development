@@ -1,4 +1,5 @@
-﻿using Features.Shed;
+﻿using Features.AbilitySystem;
+using Features.Shed;
 using UnityEngine;
 
 namespace CarGame
@@ -38,7 +39,7 @@ namespace CarGame
             {
                 case (GameState.Game):
                     UnityAdsService.instance.InterstitialPlayer.Play();
-                    _gameController = new GameController(_profilePlayer);
+                    _gameController = new GameController(_placeForUI, _profilePlayer);
                     _mainMenuController?.Dispose();
                     _settingsController?.Dispose();
                     _shedController?.Dispose();

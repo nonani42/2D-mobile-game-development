@@ -742,7 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemViewPrefab: {fileID: 1772072378796191374, guid: 1b912a5a5c4e5ae4e973bcf70a0a0261,
     type: 3}
-  _placeForItems: {fileID: 3562967823760153596}
+  _placeForItems: {fileID: 3179242014997898066}
 --- !u!1 &8541014822580928080
 GameObject:
   m_ObjectHideFlags: 0

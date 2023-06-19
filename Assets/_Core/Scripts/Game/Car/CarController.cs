@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Features.AbilitySystem;
+using UnityEngine;
 
 namespace CarGame
 {
-    internal class CarController : BaseController
+    internal class CarController : BaseController, IAbilityActivator
     {
         private readonly ResourcePath _viewPath = new ResourcePath("Car");
         private readonly CarView _view;

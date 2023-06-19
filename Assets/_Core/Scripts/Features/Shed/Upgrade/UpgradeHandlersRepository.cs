@@ -22,6 +22,8 @@ namespace Features.Shed.Upgrade
             {
                 case UpgradeType.Speed: 
                     return new SpeedUpgradeHandler(config.Value);
+                case UpgradeType.JumpHeight:
+                    return new JumpUpgradeHandler(config.Value);
                 default:
                     return _ = StubUpgradeHandler.Default;
             }

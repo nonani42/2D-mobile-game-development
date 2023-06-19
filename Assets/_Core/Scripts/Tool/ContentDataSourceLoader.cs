@@ -3,6 +3,7 @@ using System.Linq;
 using Features.Inventory.Items;
 using CarGame;
 using Features.Shed.Upgrade;
+using Features.AbilitySystem.Abilities;
 
 namespace Tool
 {
@@ -20,10 +21,10 @@ namespace Tool
             return dataSource == null ? Array.Empty<UpgradeItemConfig>() : dataSource.ItemConfigs.ToArray();
         }
 
-        //public static AbilityItemConfig[] LoadAbilityItemConfigs(ResourcePath resourcePath)
-        //{
-        //    var dataSource = ResourcesLoader.LoadObject<AbilityItemConfigDataSource>(resourcePath);
-        //    return dataSource == null ? Array.Empty<AbilityItemConfig>() : dataSource.AbilityConfigs.ToArray();
-        //}
+        public static AbilityItemConfig[] LoadAbilityItemConfigs(ResourcePath resourcePath)
+        {
+            var dataSource = ResourcesLoader.LoadObject<AbilityItemConfigDataSource>(resourcePath);
+            return dataSource == null ? Array.Empty<AbilityItemConfig>() : dataSource.AbilityConfigs.ToArray();
+        }
     }
 }

@@ -1,20 +1,33 @@
-﻿namespace CarGame
+﻿using Features.AbilitySystem;
+using UnityEngine;
+
+namespace CarGame
 {
     internal class GameController : BaseController
     {
-        public GameController(ProfilePlayer profilePlayer)
+        SubscriptionProperty<float> leftMoveDiff;
+        SubscriptionProperty<float> rightMoveDiff;
+
+        CarController carController;
+        InputGameController inputGameController;
+        TapeBackgroundController tapeBackgroundController;
+        AbilitiesController abilitiesController;
+
+
+        public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
         {
-            SubscriptionProperty<float> leftMoveDiff = new SubscriptionProperty<float>();
-            SubscriptionProperty<float> rightMoveDiff = new SubscriptionProperty<float>();
+            leftMoveDiff = new SubscriptionProperty<float>();
+            rightMoveDiff = new SubscriptionProperty<float>();
 
-            TapeBackgroundController tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
+            carController = new CarController();
+            inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
+            tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
+            abilitiesController = new AbilitiesController(placeForUi, carController);
+
             AddController(tapeBackgroundController);
-
-            InputGameController inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
             AddController(inputGameController);
-
-            CarController carController = new CarController();
             AddController(carController);
+            AddController(abilitiesController);
 
             AnalyticsManager.instance.SendLevelStarted();
         }
