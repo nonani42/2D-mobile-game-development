@@ -19,7 +19,7 @@ namespace CarGame
             leftMoveDiff = new SubscriptionProperty<float>();
             rightMoveDiff = new SubscriptionProperty<float>();
 
-            carController = new CarController();
+            carController = new CarController(profilePlayer.CurrentCar);
             inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
             tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             abilitiesController = new AbilitiesController(placeForUi, carController);

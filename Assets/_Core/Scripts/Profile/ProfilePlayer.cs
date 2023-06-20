@@ -8,14 +8,14 @@ namespace CarGame
         public readonly CarModel CurrentCar;
         public readonly InventoryModel Inventory;
 
-        public ProfilePlayer(float speedCar)
+        public ProfilePlayer(float speedCar, float jumpHeight)
         {
             CurrentState = new SubscriptionProperty<GameState>();
-            CurrentCar = new CarModel(speedCar);
+            CurrentCar = new CarModel(speedCar, jumpHeight);
             Inventory = new InventoryModel();
         }
 
-        public ProfilePlayer(float speedCar, GameState initialState) : this(speedCar)
+        public ProfilePlayer(float speedCar, float jumpHeight, GameState initialState) : this(speedCar, jumpHeight)
         {
             CurrentState.Value = initialState;
         }

@@ -7,11 +7,15 @@ namespace CarGame
     {
         private readonly ResourcePath _viewPath = new ResourcePath("Car");
         private readonly CarView _view;
+        private readonly CarModel _model;
 
-        public GameObject ViewGameObject => _view.gameObject;
 
-        public CarController()
+        GameObject IAbilityActivator.ViewGameObject => _view.gameObject;
+        float IAbilityActivator.JumpHeight => _model.JumpHeight;
+
+        public CarController(CarModel model)
         {
+            _model = model;
             _view = LoadView();
         }
 

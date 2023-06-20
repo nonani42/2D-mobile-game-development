@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66f5e6a07214ec4ba40085c67e91dd7, type: 3}
   m_Name: Jump
   m_EditorClassIdentifier: 
-  _itemConfig: {fileID: 0}
-  <Type>k__BackingField: 0
+  _itemConfig: {fileID: 11400000, guid: e5c64e65d8d73444d95ba4fac191c286, type: 2}
+  <Type>k__BackingField: 2
   <Projectile>k__BackingField: {fileID: 0}
-  <Value>k__BackingField: 0
+  <Value>k__BackingField: 0.5

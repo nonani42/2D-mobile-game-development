@@ -8,6 +8,6 @@
             _jumpHeight = jumpHeight;
 
         public void Upgrade(IUpgradable upgradable) =>
-            upgradable.Jump += _jumpHeight;
+            upgradable.JumpHeight += _jumpHeight;
     }
 }

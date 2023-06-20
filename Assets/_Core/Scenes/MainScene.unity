@@ -670,3 +670,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeForUI: {fileID: 686931106}
+  _speedCar: 15
+  _jumpHeightCar: 2
+  InitialState: 0
