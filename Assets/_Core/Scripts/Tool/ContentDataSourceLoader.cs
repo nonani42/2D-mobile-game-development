@@ -4,6 +4,7 @@ using Features.Inventory.Items;
 using CarGame;
 using Features.Shed.Upgrade;
 using Features.AbilitySystem.Abilities;
+using UnityEngine;
 
 namespace Tool
 {
@@ -25,6 +26,12 @@ namespace Tool
         {
             var dataSource = ResourcesLoader.LoadObject<AbilityItemConfigDataSource>(resourcePath);
             return dataSource == null ? Array.Empty<AbilityItemConfig>() : dataSource.AbilityConfigs.ToArray();
+        }
+
+        public static InitialSettingsConfig LoadInitialSettingsConfig(ResourcePath resourcePath)
+        {
+            var dataSource = ResourcesLoader.LoadObject<InitialSettingsConfig>(resourcePath);
+            return dataSource == null ? ScriptableObject.CreateInstance<InitialSettingsConfig>() : dataSource;
         }
     }
 }

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d5af8c3cffdb948ab04f51639bbf74, type: 3}
-  m_Name: Magnet
+  m_Script: {fileID: 11500000, guid: b362094cdbd4a3648b75049ee27ba0a2, type: 3}
+  m_Name: InitialSettingsConfig
   m_EditorClassIdentifier: 
-  _itemConfig: {fileID: 11400000, guid: f95bd2c502efac542a722e71b2032300, type: 2}
-  <Type>k__BackingField: 2
-  <Value>k__BackingField: 3.3
+  <SpeedCar>k__BackingField: 15
+  <JumpHeightCar>k__BackingField: 5
+  <InitialState>k__BackingField: 0

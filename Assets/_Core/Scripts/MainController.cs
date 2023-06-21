@@ -12,7 +12,8 @@ namespace CarGame
         private MainMenuController _mainMenuController;
         private GameController _gameController;
         private SettingsController _settingsController;
-        private ShedController _shedController;
+
+        private ShedContext _shedContext;
 
 
         public MainController(Transform placeForUI, ProfilePlayer profilePlayer)
@@ -51,7 +52,7 @@ namespace CarGame
                     break;
 
                 case (GameState.Shed):
-                    _shedController = new ShedController(_placeForUI, _profilePlayer);
+                    _shedContext = new ShedContext(_placeForUI, _profilePlayer);
                     break;
 
                 default:
@@ -65,7 +66,7 @@ namespace CarGame
             _mainMenuController?.Dispose();
             _gameController?.Dispose();
             _settingsController?.Dispose();
-            _shedController?.Dispose();
+            _shedContext?.Dispose();
         }
     }
 }
