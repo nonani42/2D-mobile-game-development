@@ -19,16 +19,21 @@ namespace CarGame
 
         private void Start()
         {
-            _initialSettingsConfig = ContentDataSourceLoader.LoadInitialSettingsConfig(_dataSourcePath);
+            ProfilePlayer profilePlayer = CreateProfilePlayer();
 
-            _speedCar = _initialSettingsConfig.SpeedCar;
-            _jumpHeightCar = _initialSettingsConfig.JumpHeightCar;
-            InitialState = _initialSettingsConfig.InitialState;
-
-            ProfilePlayer profilePlayer = new ProfilePlayer(_speedCar, _jumpHeightCar, InitialState);
             _mainController = new MainController(_placeForUI, profilePlayer);
         }
 
+        private ProfilePlayer CreateProfilePlayer()
+        {
+            _initialSettingsConfig = ContentDataSourceLoader.LoadInitialSettingsConfig(_dataSourcePath);
+
+            _speedCar = _initialSettingsConfig.Car.SpeedCar;
+            _jumpHeightCar = _initialSettingsConfig.Car.JumpHeightCar;
+            InitialState = _initialSettingsConfig.InitialState;
+
+            return new ProfilePlayer(_speedCar, _jumpHeightCar, InitialState);
+        }
 
         private void OnDestroy()
         {

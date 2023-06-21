@@ -38,6 +38,12 @@ namespace Features.Shed
         }
 
 
+        protected override void OnDispose()
+        {
+            _shedView.Deinit();
+            base.OnDispose();
+        }
+
         private void Apply()
         {
             _profilePlayer.CurrentCar.Restore();

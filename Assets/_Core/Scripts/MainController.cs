@@ -27,14 +27,14 @@ namespace CarGame
 
         protected override void OnDispose()
         {
-            DisposeControllers();
+            DisposeChildObjects();
 
             _profilePlayer.CurrentState.UnsubscribeOnChange(OnChangeGameState);
         }
 
         private void OnChangeGameState(GameState state)
         {
-            DisposeControllers();
+            DisposeChildObjects();
 
             switch (state)
             {
@@ -61,7 +61,7 @@ namespace CarGame
             }
         }
 
-        private void DisposeControllers()
+        private void DisposeChildObjects()
         {
             _mainMenuController?.Dispose();
             _gameController?.Dispose();
