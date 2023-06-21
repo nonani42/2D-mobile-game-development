@@ -1,11 +1,10 @@
-using JoostenProductions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace CarGame
 {
-    internal class FloatInputJoystick : BaseInputView, IPointerDownHandler, IPointerUpHandler, IDragHandler
+    internal class FloatInputJoystickView : BaseInputView, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
         [Header("Components")]
         [SerializeField] private Joystick _joystick;
@@ -18,13 +17,22 @@ namespace CarGame
 
         private bool _usingJoystick;
 
+        protected override void Move()
+        {
+            if (!_usingJoystick)
+                return;
 
-        private void Start() =>
-            UpdateManager.SubscribeToUpdate(Move);
+            float axisOffset = CrossPlatformInputManager.GetAxis("Horizontal");
+            float moveValue = _speed * _inputMultiplier * Time.deltaTime * axisOffset;
 
-        private void OnDestroy() =>
-            UpdateManager.UnsubscribeFromUpdate(Move);
+            float abs = Mathf.Abs(moveValue);
+            float sign = Mathf.Sign(moveValue);
 
+            if (sign > 0)
+                OnRightMove(abs);
+            else if (sign < 0)
+                OnLeftMove(abs);
+        }
 
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -58,21 +66,5 @@ namespace CarGame
         private void SetActive(bool active) =>
             _container.alpha = active ? _enabledAlpha : _disabledAlpha;
 
-        private void Move()
-        {
-            if (!_usingJoystick)
-                return;
-
-            float axisOffset = CrossPlatformInputManager.GetAxis("Horizontal");
-            float moveValue = _speed * _inputMultiplier * Time.deltaTime * axisOffset;
-
-            float abs = Mathf.Abs(moveValue);
-            float sign = Mathf.Sign(moveValue);
-
-            if (sign > 0)
-                OnRightMove(abs);
-            else if (sign < 0)
-                OnLeftMove(abs);
-        }
     }
 }

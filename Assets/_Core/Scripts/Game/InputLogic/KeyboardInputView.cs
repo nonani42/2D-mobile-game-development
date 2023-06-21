@@ -1,18 +1,11 @@
-﻿using JoostenProductions;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace CarGame
 {
     public class KeyboardInputView : BaseInputView
     {
 
-        private void Start() =>
-            UpdateManager.SubscribeToUpdate(Move);
-
-        private void OnDestroy() =>
-            UpdateManager.UnsubscribeFromUpdate(Move);
-
-        private void Move()
+        protected override void Move()
         {
             float axisOffset = Input.GetAxis("Horizontal");
             float moveValue = _speed * Time.deltaTime * axisOffset;

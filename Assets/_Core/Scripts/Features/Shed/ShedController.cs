@@ -15,12 +15,12 @@ namespace Features.Shed
 
     internal class ShedController : BaseController, IShedController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Shed/ShedView");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Shed/UpgradeItemConfigDataSource");
+        private readonly ResourcePath _viewShedPath = new ResourcePath("Prefabs/Shed/ShedView");
+        private readonly ResourcePath _dataSourceShedPath = new ResourcePath("Configs/Shed/UpgradeItemConfigDataSource");
 
-        private readonly ShedView _view;
+        private readonly ShedView _shedView;
         private readonly ProfilePlayer _profilePlayer;
-        private readonly InventoryController _inventoryController;
+        private readonly InventoryContext _inventoryContext;
         private readonly UpgradeHandlersRepository _upgradeHandlersRepository;
 
 
@@ -34,40 +34,38 @@ namespace Features.Shed
             _profilePlayer
                 = profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
 
-            _upgradeHandlersRepository = CreateRepository();
-            _inventoryController = CreateInventoryController(placeForUi);
-            _view = LoadView(placeForUi);
+            _upgradeHandlersRepository = CreateHandlerRepository();
+            _inventoryContext = CreateInventoryContext(placeForUi, _profilePlayer.Inventory);
+            _shedView = LoadShedView(placeForUi);
 
-            _view.Init(Apply, Back);
+            _shedView.Init(Apply, Back);
         }
 
 
-        private UpgradeHandlersRepository CreateRepository()
+        private InventoryContext CreateInventoryContext(Transform placeForUi, IInventoryModel model)
         {
-            UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfigs(_dataSourcePath);
+            var context = new InventoryContext(placeForUi, _profilePlayer.Inventory);
+            AddContext(context);
+            return context;
+        }
+
+        private UpgradeHandlersRepository CreateHandlerRepository()
+        {
+            UpgradeItemConfig[] upgradeConfigs = ContentDataSourceLoader.LoadUpgradeItemConfigs(_dataSourceShedPath);
             var repository = new UpgradeHandlersRepository(upgradeConfigs);
             AddRepository(repository);
 
             return repository;
         }
 
-        private InventoryController CreateInventoryController(Transform placeForUi)
+        private ShedView LoadShedView(Transform placeForUi)
         {
-            var inventoryController = new InventoryController(placeForUi, _profilePlayer.Inventory);
-            AddController(inventoryController);
-
-            return inventoryController;
-        }
-
-        private ShedView LoadView(Transform placeForUi)
-        {
-            GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
+            GameObject prefab = ResourcesLoader.LoadPrefab(_viewShedPath);
             GameObject objectView = UnityEngine.Object.Instantiate(prefab, placeForUi, false);
             AddGameObject(objectView);
 
             return objectView.GetComponent<ShedView>();
         }
-
 
         private void Apply()
         {
@@ -79,18 +77,14 @@ namespace Features.Shed
                 _upgradeHandlersRepository.Items);
 
             _profilePlayer.CurrentState.Value = GameState.Start;
-            Log($"Apply. Current Speed: {_profilePlayer.CurrentCar.Speed}"); 
-            Log($"Apply. Current Jump: {_profilePlayer.CurrentCar.JumpHeight}");
-
+            ButtonsLog($"Apply");
         }
 
         private void Back()
         {
             _profilePlayer.CurrentState.Value = GameState.Start;
-            Log($"Back. Current Speed: {_profilePlayer.CurrentCar.Speed}");
-            Log($"Back. Current Jump: {_profilePlayer.CurrentCar.JumpHeight}");
+            ButtonsLog($"Back");
         }
-
 
         private void UpgradeWithEquippedItems(
             IUpgradable upgradable,
@@ -102,7 +96,13 @@ namespace Features.Shed
                     handler.Upgrade(upgradable);
         }
 
-        private void Log(string message) =>
+        private void ButtonsLog(string btnName)
+        {
+            DefaultLog($"{btnName}. Current {nameof(_profilePlayer.CurrentCar.Speed)}: {_profilePlayer.CurrentCar.Speed}");
+            DefaultLog($"{btnName}. Current {nameof(_profilePlayer.CurrentCar.JumpHeight)}: {_profilePlayer.CurrentCar.JumpHeight}");
+        }
+
+        private void DefaultLog(string message) =>
             Debug.Log($"[{GetType().Name}] {message}");
     }
 }

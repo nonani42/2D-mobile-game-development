@@ -15,3 +15,4 @@ MonoBehaviour:
   _abilityConfigs:
   - {fileID: 11400000, guid: 60a588a85e9669944b28cb049b825e71, type: 2}
   - {fileID: 11400000, guid: 02cd3e757329db74dadbe5abe895444e, type: 2}
+  - {fileID: 11400000, guid: 19441df6edab666438f3b3ae6f939f25, type: 2}

@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
-using JetBrains.Annotations;
-using Object = UnityEngine.Object;
+﻿using JetBrains.Annotations;
 using JoostenProductions;
+using System;
+using UnityEngine;
 
 namespace Features.AbilitySystem.Abilities
 {

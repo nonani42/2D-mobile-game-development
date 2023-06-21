@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using JoostenProductions;
+using UnityEngine;
 
 namespace CarGame
 {
@@ -14,6 +15,12 @@ namespace CarGame
             _rightMove = rightMove;
             _speed = speed;
         }
+
+        private void Start() => UpdateManager.SubscribeToUpdate(Move);
+        private void OnDestroy() => UpdateManager.UnsubscribeFromUpdate(Move);
+
+        protected abstract void Move();
+
 
         protected void OnLeftMove(float value) => _leftMove.Value = value;
 

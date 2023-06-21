@@ -26,51 +26,46 @@ namespace CarGame
 
         protected override void OnDispose()
         {
-            _mainMenuController?.Dispose();
-            _gameController?.Dispose();
-            _settingsController?.Dispose();
+            DisposeControllers();
 
             _profilePlayer.CurrentState.UnsubscribeOnChange(OnChangeGameState);
         }
 
         private void OnChangeGameState(GameState state)
         {
+            DisposeControllers();
+
             switch (state)
             {
                 case (GameState.Game):
                     UnityAdsService.instance.InterstitialPlayer.Play();
                     _gameController = new GameController(_placeForUI, _profilePlayer);
-                    _mainMenuController?.Dispose();
-                    _settingsController?.Dispose();
-                    _shedController?.Dispose();
                     break;
+
                 case (GameState.Start):
                     _mainMenuController = new MainMenuController(_placeForUI, _profilePlayer);
-                    _gameController?.Dispose();
-                    _settingsController?.Dispose();
-                    _shedController?.Dispose();
                     break;
+
                 case (GameState.Settings):
                     _settingsController = new SettingsController(_placeForUI, _profilePlayer);
-                    _mainMenuController?.Dispose();
-                    _gameController?.Dispose();
-                    _shedController?.Dispose();
                     break;
+
                 case (GameState.Shed):
                     _shedController = new ShedController(_placeForUI, _profilePlayer);
-                    _mainMenuController?.Dispose();
-                    _gameController?.Dispose();
-                    _settingsController?.Dispose();
                     break;
 
                 default:
-                    _gameController?.Dispose();
-                    _mainMenuController?.Dispose();
-                    _settingsController?.Dispose();
-                    _shedController?.Dispose();
-                    Debug.Log("No controller for this state.");
+                    Debug.LogWarning("No controller for this state.");
                     break;
             }
+        }
+
+        private void DisposeControllers()
+        {
+            _mainMenuController?.Dispose();
+            _gameController?.Dispose();
+            _settingsController?.Dispose();
+            _shedController?.Dispose();
         }
     }
 }

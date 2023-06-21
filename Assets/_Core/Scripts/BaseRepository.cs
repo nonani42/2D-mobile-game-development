@@ -13,13 +13,12 @@ internal abstract class BaseRepository<TKey, TValue, TConfig> : IRepository
 
 
     protected BaseRepository(IEnumerable<TConfig> configs) =>
-        _items = CreteItems(configs);
+        _items = CreateItems(configs);
 
     public void Dispose() =>
         _items.Clear();
 
-
-    private Dictionary<TKey, TValue> CreteItems(IEnumerable<TConfig> configs)
+    private Dictionary<TKey, TValue> CreateItems(IEnumerable<TConfig> configs)
     {
         var items = new Dictionary<TKey, TValue>();
 

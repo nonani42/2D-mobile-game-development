@@ -7,7 +7,7 @@ namespace Features.AbilitySystem
 {
     internal interface IAbilitiesView
     {
-        void Display(IReadOnlyList<IAbilityItem> abilityItems, Action<string> clicked);
+        void Display(IEnumerable<IAbilityItem> abilityItems, Action<string> clicked);
         void Clear();
     }
 
@@ -18,11 +18,9 @@ namespace Features.AbilitySystem
 
         private readonly Dictionary<string, AbilityButtonView> _buttonViews = new Dictionary<string, AbilityButtonView>();
 
-
         private void OnDestroy() => Clear();
 
-
-        public void Display(IReadOnlyList<IAbilityItem> abilityItems, Action<string> clicked)
+        public void Display(IEnumerable<IAbilityItem> abilityItems, Action<string> clicked)
         {
             Clear();
 
@@ -37,7 +35,6 @@ namespace Features.AbilitySystem
 
             _buttonViews.Clear();
         }
-
 
         private AbilityButtonView CreateButtonView(IAbilityItem item, Action<string> clicked)
         {
