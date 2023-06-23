@@ -4,7 +4,7 @@ namespace BattleScripts
 {
     internal class PlayerData
     {
-        private readonly List<IEnemy> _enemies;
+        private readonly List<IPlayerDataObserver> _investors;
         private int _value;
 
         public DataType DataType { get; }
@@ -18,15 +18,15 @@ namespace BattleScripts
         public PlayerData(DataType dataType)
         {
             DataType = dataType;
-            _enemies = new List<IEnemy>();
+            _investors = new List<IPlayerDataObserver>();
         }
 
-        public void Attach(IEnemy enemy) => _enemies.Add(enemy);
-        public void Detach(IEnemy enemy) => _enemies.Remove(enemy);
+        public void Attach(IPlayerDataObserver investor) => _investors.Add(investor);
+        public void Detach(IPlayerDataObserver investor) => _investors.Remove(investor);
 
         protected void Notify()
         {
-            foreach (var investor in _enemies)
+            foreach (var investor in _investors)
                 investor.Update(this);
         }
 

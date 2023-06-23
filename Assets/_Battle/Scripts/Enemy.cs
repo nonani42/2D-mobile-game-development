@@ -2,22 +2,22 @@
 
 namespace BattleScripts
 {
-    internal interface IEnemy
+    internal interface IEnemy: IPlayerDataObserver
     {
-        void Update(PlayerData playerData);
+        int CalcPower();
     }
 
     internal class Enemy : IEnemy
     {
         private const float KMoney = 5f;
-        private const float KPower = 1.5f;
+        private const float KPower = 1f;
         private const float MaxHealthPlayer = 20;
 
         private readonly string _name;
 
-        private int _moneyPlayer;
-        private int _healthPlayer;
-        private int _powerPlayer;
+        private int _playerMoney;
+        private int _playerHealth;
+        private int _playerPower;
 
 
         public Enemy(string name) =>
@@ -29,15 +29,15 @@ namespace BattleScripts
             switch (playerData.DataType)
             {
                 case DataType.Money:
-                    _moneyPlayer = playerData.Value;
+                    _playerMoney = playerData.Value;
                     break;
 
                 case DataType.Health:
-                    _healthPlayer = playerData.Value;
+                    _playerHealth = playerData.Value;
                     break;
 
                 case DataType.Power:
-                    _powerPlayer = playerData.Value;
+                    _playerPower = playerData.Value;
                     break;
             }
 
@@ -47,13 +47,13 @@ namespace BattleScripts
         public int CalcPower()
         {
             int kHealth = CalcKHealth();
-            float moneyRatio = _moneyPlayer / KMoney;
-            float powerRatio = _powerPlayer / KPower;
+            float moneyRatio = _playerMoney / KMoney;
+            float powerRatio = _playerPower / KPower;
 
             return (int)(moneyRatio + kHealth + powerRatio);
         }
 
         private int CalcKHealth() =>
-            _healthPlayer > MaxHealthPlayer ? 100 : 5;
+            _playerHealth > MaxHealthPlayer ? 25 : 10;
     }
 }

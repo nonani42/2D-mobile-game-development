@@ -4,6 +4,7 @@
     {
         Money,
         Health,
-        Power
+        Power,
+        Hostility,
     }
 }

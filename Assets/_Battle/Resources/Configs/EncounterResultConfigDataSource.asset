@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068eadcba4acd634bb96c74d5288f2ae, type: 3}
+  m_Name: EncounterResultConfigDataSource
+  m_EditorClassIdentifier: 
+  <EncounterResultConfigs>k__BackingField:
+  - {fileID: 11400000, guid: 0deea44f0519c034c9d534d472718f19, type: 2}
+  - {fileID: 11400000, guid: 8b2c14a552f83e647bb51e4a882a978f, type: 2}
+  - {fileID: 11400000, guid: 1203cd4d126bfc34990e20ae8280a5e5, type: 2}
+  - {fileID: 11400000, guid: 3593fdc96fc62fb4cb21382e0d8870f9, type: 2}
