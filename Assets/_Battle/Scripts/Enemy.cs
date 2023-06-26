@@ -2,8 +2,10 @@
 
 namespace BattleScripts
 {
-    internal interface IEnemy: IPlayerDataObserver
+    internal interface IEnemy
     {
+        void Update(PlayerData playerData);
+
         int CalcPower();
     }
 

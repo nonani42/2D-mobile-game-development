@@ -51,7 +51,6 @@ namespace BattleScripts
         private PlayerData _hostility;
 
         private IEnemy _enemy;
-        private EncounterUI _encounterUi;
 
         private IEncounterResult[] _encounterResultConfigs;
 
@@ -59,7 +58,6 @@ namespace BattleScripts
         private void Start()
         {
             _enemy = new Enemy("Enemy Flappy");
-            _encounterUi = new EncounterUI("Avoid Button");
 
             _money = CreatePlayerData(DataType.Money);
             _health = CreatePlayerData(DataType.Health);
@@ -77,10 +75,10 @@ namespace BattleScripts
         {
             SetUIVisibility(GameStateType.Game);
 
-            ChangeDataWindow(_money);
-            ChangeDataWindow(_health);
-            ChangeDataWindow(_power);
-            ChangeDataWindow(_hostility);
+            ChangeUiWindow(_money);
+            ChangeUiWindow(_health);
+            ChangeUiWindow(_power);
+            ChangeUiWindow(_hostility);
         }
 
         private void OnDestroy()
@@ -107,9 +105,6 @@ namespace BattleScripts
                 case DataType.Power:
                     playerData.Attach(_enemy);
                     break;
-                case DataType.Hostility:
-                    playerData.Attach(_encounterUi);
-                    break;
             }
             return playerData;
         }
@@ -117,7 +112,6 @@ namespace BattleScripts
         private void DisposePlayerData(ref PlayerData playerData)
         {
             playerData.Detach(_enemy);
-            playerData.Detach(_encounterUi);
             playerData = null;
         }
 
@@ -179,10 +173,10 @@ namespace BattleScripts
         private void AddToValue(int addition, PlayerData playerData)
         {
             playerData.Value += addition;
-            ChangeDataWindow(playerData);
+            ChangeUiWindow(playerData);
         }
 
-        private void ChangeDataWindow(PlayerData playerData)
+        private void ChangeUiWindow(PlayerData playerData)
         {
             int value = playerData.Value;
             DataType dataType = playerData.DataType;
@@ -195,8 +189,8 @@ namespace BattleScripts
             switch (dataType)
             {
                 case DataType.Hostility:
-                    bool isHostile = _encounterUi.CheckHostility();
-                    _avoidButton.gameObject.SetActive(!isHostile);
+                    float playerHostilityThreshold = 2;
+                    _avoidButton.gameObject.SetActive(!(value > playerHostilityThreshold));
 
                     SetDataBrackets(_addHostilityButton, _subtractHostilityButton, value, 0, 5);
                     break;
