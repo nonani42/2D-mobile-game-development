@@ -38,7 +38,7 @@ namespace Rewards
             if (_isInitialized)
                 return;
 
-            _model = new RewardContainerModel();
+            _model = new RewardContainerModel(_rewardSlotConfigDataSource.Period);
             InitSlots();
             RefreshUi();
             _view.SubscribeButtons(ClaimReward, ResetRewardsState);

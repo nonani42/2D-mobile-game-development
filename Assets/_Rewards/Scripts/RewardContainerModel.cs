@@ -5,13 +5,22 @@ namespace Rewards
 {
     internal class RewardContainerModel
     {
-        private const string CurrentSlotInActiveKey = nameof(CurrentSlotInActiveKey);
-        private const string TimeGetRewardKey = nameof(TimeGetRewardKey);
+        private string CurrentSlotInActiveKey;
+        private string TimeGetRewardKey;
+        private RewardPeriodType RewardPeriod;
+
 
         public int CurrentSlotInActive
         {
             get => PlayerPrefs.GetInt(CurrentSlotInActiveKey);
             set => PlayerPrefs.SetInt(CurrentSlotInActiveKey, value);
+        }
+
+        public RewardContainerModel(RewardPeriodType period)
+        {
+            RewardPeriod = period;
+            CurrentSlotInActiveKey = RewardPeriod + nameof(CurrentSlotInActiveKey);
+            TimeGetRewardKey = RewardPeriod + nameof(TimeGetRewardKey);
         }
 
         public DateTime? TimeGetReward
