@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0543d22c9a46ca4798def7a260dbb2d, type: 3}
+  m_Name: DailyRewardSlotConfigDataSource
+  m_EditorClassIdentifier: 
+  <Period>k__BackingField: 0
+  <TimeCooldown>k__BackingField: 5
+  <TimeDeadline>k__BackingField: 10
+  <RewardSlotConfigs>k__BackingField:
+  - {fileID: 11400000, guid: f569487c7c790ad4f8e12f4e6a38b953, type: 2}
+  - {fileID: 11400000, guid: e968186ff49cb4941bc2e0726b7b6978, type: 2}
+  - {fileID: 11400000, guid: cdcd374ad352bce45bdc66db2055b6cf, type: 2}
+  - {fileID: 11400000, guid: 893bd9368e62bf14cbd236eb5e91d9dc, type: 2}
+  - {fileID: 11400000, guid: d38fdb930d34b5d468ffa07adc3b0e38, type: 2}
+  - {fileID: 11400000, guid: 4df991bf4d94ac441b0a43eac1ad40ee, type: 2}
+  - {fileID: 11400000, guid: 08f1005561ae00d43910c63b5e253a25, type: 2}

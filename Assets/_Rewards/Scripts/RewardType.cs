@@ -4,5 +4,6 @@
     {
         Wood,
         Crystal,
+        Ham,
     }
 }
