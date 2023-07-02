@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Features.AbilitySystem.Abilities;
+using CarGame;
 
 namespace Features.AbilitySystem
 {

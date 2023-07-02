@@ -17,13 +17,15 @@ namespace Tween
         [SerializeField] private Ease _curveEase = Ease.Linear;
         [SerializeField] private float _duration = 0.6f;
         [SerializeField] private float _strength = 30f;
+        [SerializeField] private string _text = "text";
 
+        private ButtonAnimation _buttonAnimation;
 
         private void OnValidate() => InitComponents();
         private void Awake() => InitComponents();
 
         private void Start() => _button.onClick.AddListener(OnButtonClick);
-        private void OnDestroy() => _button.onClick.RemoveAllListeners();
+        private void OnDestroy() { _button.onClick.RemoveAllListeners(); }
 
         private void InitComponents()
         {
@@ -32,6 +34,8 @@ namespace Tween
 
             if(_rectTransform == null)
                 _rectTransform = GetComponent<RectTransform>();
+
+            _buttonAnimation = new ButtonAnimation(_rectTransform);
         }
 
 
@@ -50,6 +54,18 @@ namespace Tween
                     _rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase);
                     break;
             }
+        }
+
+        [ContextMenu(nameof(Play))]
+        public void Play()
+        {
+            _buttonAnimation.PlaySequence();
+        }
+
+        [ContextMenu(nameof(Stop))]
+        public void Stop()
+        {
+            _buttonAnimation.StopSequence();
         }
     }
 }

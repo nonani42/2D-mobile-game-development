@@ -11,6 +11,7 @@ namespace Tween
         public static string AnimationTypeName => nameof(_animationButtonType);
         public static string CurveEaseName => nameof(_curveEase);
         public static string DurationName => nameof(_duration);
+        public static string TextName => nameof(_text);
 
 
         [SerializeField] private RectTransform _rectTransform;
@@ -19,12 +20,15 @@ namespace Tween
         [SerializeField] private Ease _curveEase = Ease.Linear;
         [SerializeField] private float _duration = 0.6f;
         [SerializeField] private float _strength = 30f;
+        [SerializeField] private string _text = "text";
 
+        private ButtonAnimation _buttonAnimation;
 
         protected override void Awake()
         {
             base.Awake();
             InitRectTransform();
+            _buttonAnimation = new ButtonAnimation(_rectTransform);
         }
 
         protected override void OnValidate()
@@ -60,6 +64,18 @@ namespace Tween
                     _rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase);
                     break;
             }
+        }
+
+        [ContextMenu(nameof(Play))]
+        public void Play()
+        {
+            _buttonAnimation.PlaySequence();
+        }
+
+        [ContextMenu(nameof(Stop))]
+        public void Stop()
+        {
+            _buttonAnimation.StopSequence();
         }
     }
 }
