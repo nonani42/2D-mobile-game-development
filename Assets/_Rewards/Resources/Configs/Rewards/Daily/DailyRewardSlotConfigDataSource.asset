@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DailyRewardSlotConfigDataSource
   m_EditorClassIdentifier: 
   <Period>k__BackingField: 0
-  <TimeCooldown>k__BackingField: 5
-  <TimeDeadline>k__BackingField: 10
+  <TimeCooldown>k__BackingField: 86400
+  <TimeDeadline>k__BackingField: 172800
   <RewardSlotConfigs>k__BackingField:
   - {fileID: 11400000, guid: f569487c7c790ad4f8e12f4e6a38b953, type: 2}
   - {fileID: 11400000, guid: e968186ff49cb4941bc2e0726b7b6978, type: 2}
