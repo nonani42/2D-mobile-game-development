@@ -17,9 +17,13 @@ namespace Tween
         [SerializeField] private Ease _curveEase = Ease.Linear;
         [SerializeField] private float _duration = 0.6f;
         [SerializeField] private float _strength = 30f;
-        [SerializeField] private string _text = "text";
+        [SerializeField] private float _jumpStrength = 0.5f;
+        [SerializeField] private int _jumpCount = 5;
+        [SerializeField] private bool _isIndependentUpdate = true;
 
-        private ButtonAnimation _buttonAnimation;
+        private Sequence _sequence;
+        private Tweener _tweenAnimation;
+
 
         private void OnValidate() => InitComponents();
         private void Awake() => InitComponents();
@@ -34,38 +38,49 @@ namespace Tween
 
             if(_rectTransform == null)
                 _rectTransform = GetComponent<RectTransform>();
-
-            _buttonAnimation = new ButtonAnimation(_rectTransform);
         }
 
 
         private void OnButtonClick() =>
             ActivateAnimation();
 
+        [ContextMenu(nameof(ActivateAnimation))]
         private void ActivateAnimation()
         {
+            StopAnimation();
             switch (_animationButtonType)
             {
                 case AnimationButtonType.ChangeRotation:
-                    _rectTransform.DOShakeRotation(_duration, Vector3.forward * _strength).SetEase(_curveEase);
+                    _tweenAnimation = _rectTransform.DOShakeRotation(_duration, Vector3.forward * _strength).SetEase(_curveEase).SetUpdate(_isIndependentUpdate);
                     break;
 
                 case AnimationButtonType.ChangePosition:
-                    _rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase);
+                    _tweenAnimation = _rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase).SetUpdate(_isIndependentUpdate);
                     break;
             }
         }
 
-        [ContextMenu(nameof(Play))]
-        public void Play()
+        [ContextMenu(nameof(StopAnimation))]
+        public void StopAnimation()
         {
-            _buttonAnimation.PlaySequence();
+            _tweenAnimation?.Kill();
         }
 
-        [ContextMenu(nameof(Stop))]
-        public void Stop()
+        [ContextMenu(nameof(PlaySequence))]
+        public void PlaySequence()
         {
-            _buttonAnimation.StopSequence();
+            StopSequence();
+            _sequence = DOTween.Sequence();
+
+            _sequence.Append(_rectTransform.DOJump(Vector2.up, _jumpStrength, _jumpCount, _duration));
+            _sequence.Append(_rectTransform.DOShakeRotation(_duration, Vector3.forward * _strength).SetEase(_curveEase));
+            _sequence.Append(_rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase));
+        }
+
+        [ContextMenu(nameof(StopSequence))]
+        public void StopSequence()
+        {
+            _sequence?.Kill();
         }
     }
 }

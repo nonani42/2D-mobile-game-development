@@ -1132,7 +1132,9 @@ MonoBehaviour:
   _curveEase: 1
   _duration: 0.6
   _strength: 30
-  _text: text
+  _jumpStrength: 0.5
+  _jumpCount: 5
+  _isIndependentUpdate: 1
 --- !u!1 &1288215147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1743,9 @@ MonoBehaviour:
   _curveEase: 1
   _duration: 0.6
   _strength: 30
-  _text: text
+  _jumpStrength: 0.5
+  _jumpCount: 5
+  _isIndependentUpdate: 1
 --- !u!1 &1628213505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +1876,9 @@ MonoBehaviour:
   _curveEase: 1
   _duration: 0.6
   _strength: 30
-  _text: text
+  _jumpStrength: 0.5
+  _jumpCount: 5
+  _isIndependentUpdate: 1
 --- !u!1 &1913927132
 GameObject:
   m_ObjectHideFlags: 0
