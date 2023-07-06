@@ -7,7 +7,7 @@ namespace UI
 {
     class BackToMenuController : BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/BackToMenu");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/BackToMenuView");
 
         private readonly BackToMenuView _view;
         private readonly ProfilePlayer _profilePlayer;
@@ -19,7 +19,6 @@ namespace UI
             _view = LoadView(placeForUi);
             _view.Init(BackToMenu);
         }
-
 
         private BackToMenuView LoadView(Transform placeForUi)
         {

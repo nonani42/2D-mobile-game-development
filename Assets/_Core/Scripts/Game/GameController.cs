@@ -4,6 +4,7 @@ using Features.Battle;
 using Profile;
 using System.Collections.Generic;
 using Tool;
+using UI;
 using UnityEngine;
 
 namespace CarGame
@@ -21,6 +22,7 @@ namespace CarGame
         private readonly TapeBackgroundController tapeBackgroundController;
         private readonly AbilitiesController abilitiesController;
         private readonly StartBattleController startBattleController;
+        private readonly PauseController pauseController;
 
 
         public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
@@ -37,12 +39,14 @@ namespace CarGame
             tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             abilitiesController = new AbilitiesController(abilityView, abilityRepository, carController, abilityItems);
             startBattleController = new StartBattleController(placeForUi, profilePlayer);
+            pauseController = new PauseController(placeForUi, profilePlayer);
 
             AddController(tapeBackgroundController);
             AddController(inputGameController);
             AddController(carController);
             AddController(abilitiesController);
             AddController(startBattleController);
+            AddController(pauseController);
 
             AnalyticsManager.instance.SendLevelStarted();
         }

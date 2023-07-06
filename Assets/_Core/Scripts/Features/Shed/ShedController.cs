@@ -4,7 +4,6 @@ using UnityEngine;
 using Features.Shed.Upgrade;
 using JetBrains.Annotations;
 using Profile;
-using Features.Inventory;
 
 namespace Features.Shed
 {

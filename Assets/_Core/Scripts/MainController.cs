@@ -17,7 +17,10 @@ namespace CarGame
         private SettingsController _settingsController;
         private RewardsController _rewardsController;
         private BattleController _battleController;
-        private BackToMenuController _backToMenuController;
+        private BackToMenuController _backToMenuController; 
+        private PauseMenuController _pauseMenuController;
+
+
         private ShedContext _shedContext;
 
 
@@ -68,14 +71,17 @@ namespace CarGame
                     _battleController = new BattleController(_placeForUI, _profilePlayer);
                     break;
 
+                case (GameState.Pause):
+                    _pauseMenuController = new PauseMenuController(_placeForUI, _profilePlayer);
+                    break;
+
                 default:
                     Debug.LogWarning("No controller for this state.");
                     break;
             }
 
-            if (state != GameState.Start)
+            if (state != GameState.Start && state != GameState.Pause)
                 _backToMenuController = new BackToMenuController(_placeForUI, _profilePlayer);
-
         }
 
         private void DisposeChildObjects()
@@ -87,6 +93,7 @@ namespace CarGame
             _rewardsController?.Dispose();
             _battleController?.Dispose();
             _backToMenuController?.Dispose();
+            _pauseMenuController?.Dispose();
         }
     }
 }

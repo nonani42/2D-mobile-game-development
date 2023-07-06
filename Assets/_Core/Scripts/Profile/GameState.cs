@@ -4,6 +4,7 @@
     {
         Start,
         Game,
+        Pause,
         Settings,
         Shed,
         DailyReward,
