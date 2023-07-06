@@ -41,9 +41,9 @@ namespace CarGame
             startBattleController = new StartBattleController(placeForUi, profilePlayer);
             pauseController = new PauseController(placeForUi, profilePlayer);
 
-            AddController(tapeBackgroundController);
-            AddController(inputGameController);
             AddController(carController);
+            AddController(inputGameController);
+            AddController(tapeBackgroundController);
             AddController(abilitiesController);
             AddController(startBattleController);
             AddController(pauseController);

@@ -23,8 +23,12 @@ namespace UI
 
         private void OnDestroy()
         {
-            _continueButton.onClick.RemoveListener(_continue);
-            _backToMainMenuButton.onClick.RemoveListener(_backToMainMenu);
+            _continueButton.onClick.RemoveAllListeners();
+            _backToMainMenuButton.onClick.RemoveAllListeners();
         }
+
+        public void Show() => gameObject.SetActive(true);
+
+        public void Hide() => gameObject.SetActive(false);
     }
 }

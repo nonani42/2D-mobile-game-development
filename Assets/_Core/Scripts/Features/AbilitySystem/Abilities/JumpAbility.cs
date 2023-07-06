@@ -121,5 +121,10 @@ namespace Features.AbilitySystem.Abilities
         private bool IsJumpFinished() =>
             _jumpPhase == JumpPhase.Down &&
             _time <= StartTime;
+
+        public void Dispose()
+        {
+            FinishAbility();
+        }
     }
 }

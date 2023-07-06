@@ -36,9 +36,9 @@ namespace CarGame
 
         private void SendEvent(string eventName)
         {
-            Debug.Log($"{eventName}");
-            for (int i = 0; i < _services.Length; i++)
-                _services[i].SendEvent(eventName);
+            //Debug.Log($"{eventName}");
+            //for (int i = 0; i < _services.Length; i++)
+            //    _services[i].SendEvent(eventName);
         }
 
         public void Transaction(UnityEngine.Purchasing.Product product)

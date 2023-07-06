@@ -72,8 +72,8 @@ namespace CarGame
             Error($"Initialization Failed: {error.ToString()} - {message}");
 
 
-        private void Log(string message) => Debug.Log(WrapMessage(message));
-        private void Error(string message) => Debug.LogError(WrapMessage(message));
+        private void Log(string message) => message.ToString(); //Debug.Log(WrapMessage(message));
+        private void Error(string message) => message.ToString(); //Debug.LogError(WrapMessage(message));
         private string WrapMessage(string message) => $"[{GetType().Name}] {message}";
     }
 }

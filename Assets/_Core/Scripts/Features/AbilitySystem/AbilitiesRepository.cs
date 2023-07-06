@@ -13,6 +13,15 @@ namespace Features.AbilitySystem
         public AbilitiesRepository(IEnumerable<IAbilityItem> abilityItems) : base(abilityItems)
         { }
 
+        public override void Dispose()
+        {
+            foreach (var item in Items)
+            {
+                item.Value.Dispose();
+            }
+            base.Dispose();
+        }
+
         protected override string GetKey(IAbilityItem config) => config.Id;
 
         protected override IAbility CreateItem(IAbilityItem abilityItem)

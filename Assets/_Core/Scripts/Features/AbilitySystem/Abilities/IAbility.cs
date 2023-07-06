@@ -3,5 +3,7 @@
     internal interface IAbility
     {
         void Apply(IAbilityActivator activator);
+        void Dispose();
+
     }
 }

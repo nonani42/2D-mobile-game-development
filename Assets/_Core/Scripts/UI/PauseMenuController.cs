@@ -10,13 +10,41 @@ namespace UI
 
         private readonly PauseMenuView _view;
         private readonly ProfilePlayer _profilePlayer;
+        private readonly Pause _pause;
 
 
-        public PauseMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public PauseMenuController(Transform placeForUi, ProfilePlayer profilePlayer, Pause pause)
         {
             _profilePlayer = profilePlayer;
+
+            _pause = pause;
+            Subscribe(_pause);
+
             _view = LoadView(placeForUi);
             _view.Init(ContinueGame, BackToMainMenu);
+
+            if (_pause.IsEnabled)
+                _view.Show();
+            else
+                _view.Hide();
+        }
+
+        protected override void OnDispose()
+        {
+            base.OnDispose();
+            Unsubscribe(_pause);
+        }
+
+        private void Subscribe(Pause pause)
+        {
+            pause.Enabled += OnPauseEnabled;
+            pause.Disabled += OnPauseDisabled;
+        }
+
+        private void Unsubscribe(Pause pause)
+        {
+            pause.Enabled -= OnPauseEnabled;
+            pause.Disabled -= OnPauseDisabled;
         }
 
         private PauseMenuView LoadView(Transform placeForUi)
@@ -28,10 +56,10 @@ namespace UI
             return objectView.GetComponent<PauseMenuView>();
         }
 
-        private void ContinueGame() =>
-            _profilePlayer.CurrentState.Value = GameState.Game;
+        private void ContinueGame() => _pause.Disable();
+        private void BackToMainMenu() => _profilePlayer.CurrentState.Value = GameState.Start; 
 
-        private void BackToMainMenu() =>
-            _profilePlayer.CurrentState.Value = GameState.Start;
+        private void OnPauseEnabled() => _view.Show();
+        private void OnPauseDisabled() => _view.Hide();
     }
 }

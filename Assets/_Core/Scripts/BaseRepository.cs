@@ -15,8 +15,7 @@ internal abstract class BaseRepository<TKey, TValue, TConfig> : IRepository
     protected BaseRepository(IEnumerable<TConfig> configs) =>
         _items = CreateItems(configs);
 
-    public void Dispose() =>
-        _items.Clear();
+    public virtual void Dispose() => _items.Clear();
 
     private Dictionary<TKey, TValue> CreateItems(IEnumerable<TConfig> configs)
     {

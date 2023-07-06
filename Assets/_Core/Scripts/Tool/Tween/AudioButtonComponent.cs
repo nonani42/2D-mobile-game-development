@@ -14,7 +14,6 @@ namespace Tool.Tween
 
         private SoundManager _manager;
 
-        private void OnValidate() => InitComponents();
         private void Awake() => InitComponents();
 
         private void Start() => _button.onClick.AddListener(OnButtonClick);

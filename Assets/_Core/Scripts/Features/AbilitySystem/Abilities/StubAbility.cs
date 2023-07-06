@@ -6,5 +6,8 @@
 
         public void Apply(IAbilityActivator activator)
         { }
+
+        public void Dispose()
+        { }
     }
 }
