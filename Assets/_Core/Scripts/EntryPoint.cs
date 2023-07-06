@@ -1,4 +1,5 @@
-﻿using Tool;
+﻿using Profile;
+using Tool;
 using UnityEngine;
 
 namespace CarGame
@@ -7,6 +8,7 @@ namespace CarGame
     {
         [SerializeField] private Transform _placeForUI;
 
+        private readonly ResourcePath _soundManagerPrefabPath = new ResourcePath("Prefabs/SoundManager");
         private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/InitialSettingsConfig");
         private InitialSettingsConfig _initialSettingsConfig;
 
@@ -19,9 +21,16 @@ namespace CarGame
 
         private void Start()
         {
+            CreateSoundManager();
             ProfilePlayer profilePlayer = CreateProfilePlayer();
 
             _mainController = new MainController(_placeForUI, profilePlayer);
+        }
+
+        private void CreateSoundManager()
+        {
+            var temp = ResourcesLoader.LoadObject<SoundManager>(_soundManagerPrefabPath);
+            Instantiate(temp, null);
         }
 
         private ProfilePlayer CreateProfilePlayer()

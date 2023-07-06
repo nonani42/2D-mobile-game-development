@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using Tool;
+using UnityEngine;
 
 namespace CarGame
 {
     internal class TapeBackgroundController : BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("Background");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Background");
 
         private readonly SubscriptionProperty<float> _diff;
         private readonly ISubscriptionProperty<float> _leftMoveDiff;

@@ -1,5 +1,8 @@
-﻿using Features.AbilitySystem;
+﻿using Features.Battle;
+using Features.Rewards;
 using Features.Shed;
+using Profile;
+using UI;
 using UnityEngine;
 
 namespace CarGame
@@ -12,7 +15,9 @@ namespace CarGame
         private MainMenuController _mainMenuController;
         private GameController _gameController;
         private SettingsController _settingsController;
-
+        private RewardsController _rewardsController;
+        private BattleController _battleController;
+        private BackToMenuController _backToMenuController;
         private ShedContext _shedContext;
 
 
@@ -55,10 +60,22 @@ namespace CarGame
                     _shedContext = new ShedContext(_placeForUI, _profilePlayer);
                     break;
 
+                case (GameState.DailyReward):
+                    _rewardsController = new RewardsController(_placeForUI, _profilePlayer);
+                    break;
+
+                case (GameState.Battle):
+                    _battleController = new BattleController(_placeForUI, _profilePlayer);
+                    break;
+
                 default:
                     Debug.LogWarning("No controller for this state.");
                     break;
             }
+
+            if (state != GameState.Start)
+                _backToMenuController = new BackToMenuController(_placeForUI, _profilePlayer);
+
         }
 
         private void DisposeChildObjects()
@@ -67,6 +84,9 @@ namespace CarGame
             _gameController?.Dispose();
             _settingsController?.Dispose();
             _shedContext?.Dispose();
+            _rewardsController?.Dispose();
+            _battleController?.Dispose();
+            _backToMenuController?.Dispose();
         }
     }
 }

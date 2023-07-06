@@ -1,11 +1,10 @@
-﻿using Tool;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Features.Inventory;
 using Features.Shed.Upgrade;
 using JetBrains.Annotations;
-using CarGame;
+using Profile;
+using Features.Inventory;
 
 namespace Features.Shed
 {
@@ -16,51 +15,69 @@ namespace Features.Shed
     internal class ShedController : BaseController, IShedController
     {
         private readonly IShedView _shedView;
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly ProfilePlayer _playerProfile;
         private readonly IUpgradeHandlersRepository _upgradeHandlersRepository;
 
+        public List<string> _rollbackInventory;
+
+        public List<string> RollbackInventory 
+        { 
+            get 
+            {
+                if (_rollbackInventory == null)
+                    _rollbackInventory = new List<string>();
+                return _rollbackInventory; 
+            }
+            set
+            {
+                _rollbackInventory = new List<string>();
+                foreach (var item in value)
+                {
+                    _rollbackInventory.Add(item);
+                }
+            }
+        }
 
         public ShedController(
             [NotNull] ProfilePlayer profilePlayer,
             [NotNull] IShedView shedView,
             [NotNull] IUpgradeHandlersRepository upgradeHandlersRepository)
         {
-            _profilePlayer =
+            _playerProfile =
                 profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
 
-            _shedView = 
+            RollbackInventory = (List<string>)_playerProfile.Inventory.EquippedItems;
+
+            _shedView =
                 shedView ?? throw new ArgumentNullException(nameof(shedView));
 
-            _upgradeHandlersRepository = 
+            _upgradeHandlersRepository =
                 upgradeHandlersRepository ?? throw new ArgumentNullException(nameof(upgradeHandlersRepository));
 
-            _shedView.Init(Apply, Back);
+            _shedView.Init(Apply);
         }
-
 
         protected override void OnDispose()
         {
+            RollbackEqippedItems();
+
+            UpgradeLog();
+
             _shedView.Deinit();
             base.OnDispose();
         }
 
         private void Apply()
         {
-            _profilePlayer.CurrentCar.Restore();
+            _playerProfile.CurrentCar.Restore();
 
             UpgradeWithEquippedItems(
-                _profilePlayer.CurrentCar,
-                _profilePlayer.Inventory.EquippedItems,
+                _playerProfile.CurrentCar,
+                _playerProfile.Inventory.EquippedItems,
                 _upgradeHandlersRepository.Items);
 
-            _profilePlayer.CurrentState.Value = GameState.Start;
-            ButtonsLog($"Apply");
-        }
-
-        private void Back()
-        {
-            _profilePlayer.CurrentState.Value = GameState.Start;
-            ButtonsLog($"Back");
+            UpgradeLog();
+            RollbackInventory = (List<string>)_playerProfile.Inventory.EquippedItems;
         }
 
         private void UpgradeWithEquippedItems(
@@ -73,10 +90,15 @@ namespace Features.Shed
                     handler.Upgrade(upgradable);
         }
 
-        private void ButtonsLog(string btnName)
+        private void RollbackEqippedItems()
         {
-            DefaultLog($"{btnName}. Current {nameof(_profilePlayer.CurrentCar.Speed)}: {_profilePlayer.CurrentCar.Speed}");
-            DefaultLog($"{btnName}. Current {nameof(_profilePlayer.CurrentCar.JumpHeight)}: {_profilePlayer.CurrentCar.JumpHeight}");
+            _playerProfile.Inventory.EquipSelected(RollbackInventory);
+        }
+
+        private void UpgradeLog()
+        {
+            DefaultLog($"Current {nameof(_playerProfile.CurrentCar.Speed)}: {_playerProfile.CurrentCar.Speed}");
+            DefaultLog($"Current {nameof(_playerProfile.CurrentCar.JumpHeight)}: {_playerProfile.CurrentCar.JumpHeight}");
         }
 
         private void DefaultLog(string message) =>

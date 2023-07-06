@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Profile;
+using Tool;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace CarGame
@@ -13,7 +15,7 @@ namespace CarGame
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUI);
-            _view.Init(StartGame, GoToSettings, WatchRewardedAd, Buy, GoToShed);
+            _view.Init(StartGame, GoToSettings, WatchRewardedAd, Buy, GoToShed, OpenDailyReward, Exit);
 
             AnalyticsManager.instance.SendMainMenuOpened();
         }
@@ -31,5 +33,14 @@ namespace CarGame
         private void WatchRewardedAd() => UnityAdsService.instance.RewardedPlayer.Play();
         private void Buy(string productId) => IAPService.instance.Buy(productId);
         private void GoToShed() => _profilePlayer.CurrentState.Value = GameState.Shed;
+        private void OpenDailyReward() => _profilePlayer.CurrentState.Value = GameState.DailyReward;
+        
+        private void Exit()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
+            Application.Quit();
+        }
     }
 }

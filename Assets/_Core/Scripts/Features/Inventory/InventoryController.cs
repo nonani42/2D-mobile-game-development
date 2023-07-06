@@ -1,6 +1,8 @@
 ﻿using Features.Inventory.Items;
 using JetBrains.Annotations;
+using Profile;
 using System;
+using System.Collections.Generic;
 
 namespace Features.Inventory
 {

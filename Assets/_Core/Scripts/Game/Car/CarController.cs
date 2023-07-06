@@ -1,11 +1,12 @@
 ﻿using Features.AbilitySystem;
+using Tool;
 using UnityEngine;
 
 namespace CarGame
 {
     internal class CarController : BaseController, IAbilityActivator
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Car");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Car");
         private readonly CarView _view;
         private readonly CarModel _model;
 

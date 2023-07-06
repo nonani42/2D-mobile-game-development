@@ -11,6 +11,7 @@ namespace Features.Inventory
     {
         private readonly ResourcePath _viewInventoryPath = new ResourcePath("Prefabs/Inventory/InventoryView");
         private readonly ResourcePath _dataSourceInventoryPath = new ResourcePath("Configs/Inventory/ItemConfigDataSource");
+        public readonly InventoryController inventoryController;
 
         public InventoryContext(Transform placeForUi, IInventoryModel model)
         {
@@ -19,11 +20,10 @@ namespace Features.Inventory
 
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
-
-            CreateController(placeForUi, model);
+            inventoryController = CreateController(placeForUi, model);
         }
 
-        private InventoryController CreateController(Transform placeForUi, IInventoryModel model)
+        public InventoryController CreateController(Transform placeForUi, IInventoryModel model)
         {
             IInventoryView view = LoadInventoryView(placeForUi);
             IItemsRepository repository = CreateInventoryRepository();

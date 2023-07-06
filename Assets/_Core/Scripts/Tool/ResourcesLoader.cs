@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CarGame
+namespace Tool
 {
     public static class ResourcesLoader
     {

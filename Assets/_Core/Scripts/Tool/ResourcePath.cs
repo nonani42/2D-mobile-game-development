@@ -1,4 +1,4 @@
-﻿namespace CarGame
+﻿namespace Tool
 {
     public class ResourcePath
     {

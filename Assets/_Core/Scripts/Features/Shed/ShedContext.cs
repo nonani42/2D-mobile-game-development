@@ -1,9 +1,7 @@
-﻿using CarGame;
-using Features.Inventory;
+﻿using Features.Inventory;
 using Features.Shed.Upgrade;
+using Profile;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Tool;
 using UnityEngine;
 
@@ -15,15 +13,14 @@ namespace Features.Shed
         private readonly ResourcePath _viewShedPath = new ResourcePath("Prefabs/Shed/ShedView");
         private readonly ResourcePath _dataSourceShedPath = new ResourcePath("Configs/Shed/UpgradeItemConfigDataSource");
 
-        private readonly InventoryContext _inventoryContext;
-
 
         public ShedContext(Transform placeForUi, ProfilePlayer profilePlayer)
         {
             if (placeForUi == null)
                 throw new ArgumentNullException(nameof(placeForUi));
 
-            _inventoryContext = CreateInventoryContext(placeForUi, profilePlayer.Inventory);
+            CreateInventoryContext(placeForUi, profilePlayer.Inventory);
+
             CreateController(placeForUi, profilePlayer);
         }
 

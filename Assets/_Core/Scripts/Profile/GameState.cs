@@ -1,4 +1,4 @@
-﻿namespace CarGame
+﻿namespace Profile
 {
     public enum GameState
     {
@@ -6,5 +6,7 @@
         Game,
         Settings,
         Shed,
+        DailyReward,
+        Battle,
     }
 }

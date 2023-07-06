@@ -1,5 +1,7 @@
 ﻿using Features.AbilitySystem;
 using Features.AbilitySystem.Abilities;
+using Features.Battle;
+using Profile;
 using System.Collections.Generic;
 using Tool;
 using UnityEngine;
@@ -14,10 +16,12 @@ namespace CarGame
         SubscriptionProperty<float> leftMoveDiff;
         SubscriptionProperty<float> rightMoveDiff;
 
-        CarController carController;
-        InputGameController inputGameController;
-        TapeBackgroundController tapeBackgroundController;
-        AbilitiesController abilitiesController;
+        private readonly CarController carController;
+        private readonly InputGameController inputGameController;
+        private readonly TapeBackgroundController tapeBackgroundController;
+        private readonly AbilitiesController abilitiesController;
+        private readonly StartBattleController startBattleController;
+
 
         public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
         {
@@ -32,11 +36,13 @@ namespace CarGame
             inputGameController = new InputGameController(leftMoveDiff, rightMoveDiff, profilePlayer.CurrentCar);
             tapeBackgroundController = new TapeBackgroundController(leftMoveDiff, rightMoveDiff);
             abilitiesController = new AbilitiesController(abilityView, abilityRepository, carController, abilityItems);
+            startBattleController = new StartBattleController(placeForUi, profilePlayer);
 
             AddController(tapeBackgroundController);
             AddController(inputGameController);
             AddController(carController);
             AddController(abilitiesController);
+            AddController(startBattleController);
 
             AnalyticsManager.instance.SendLevelStarted();
         }

@@ -30,5 +30,18 @@ namespace Features.Inventory
 
         public bool IsEquipped(string itemId) =>
             _equippedItems.Contains(itemId);
+
+        private void UnequipAll() =>
+            _equippedItems.Clear();
+
+        public void EquipSelected(List<string> itemIds)
+        {
+            UnequipAll();
+
+            foreach (string id in itemIds) 
+            {
+                EquipItem(id);
+            }
+        }
     }
 }
