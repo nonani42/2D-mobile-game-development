@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: sound_bundle
+  m_EditorClassIdentifier: 
+  m_GroupName: sound_bundle
+  m_Data:
+    m_SerializedData: []
+  m_GUID: aaf7e1cfb19fdac45ab555cfb92133d4
+  m_SerializeEntries:
+  - m_GUID: 5cb9a31dcdb20474eb54c1dc7610d12f
+    m_Address: click_button
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 8300000, guid: 5cb9a31dcdb20474eb54c1dc7610d12f, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 5cb9a31dcdb20474eb54c1dc7610d12f, type: 3}
+  - m_GUID: 884361cdc15129644b500ed66f5cd831
+    m_Address: music
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 8300000, guid: 884361cdc15129644b500ed66f5cd831, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 884361cdc15129644b500ed66f5cd831, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a6d352d20f667ff4ca28a80c1941f639, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9b50c4edc9803044283cd863cf1cf306, type: 2}
+    - {fileID: 11400000, guid: d2c4ef78c26c94c48bf5b4851e3120bf, type: 2}

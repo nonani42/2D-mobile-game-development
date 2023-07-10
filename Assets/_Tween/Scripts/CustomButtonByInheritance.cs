@@ -34,11 +34,11 @@ namespace Tween
             InitRectTransform();
         }
 
-        protected override void OnValidate()
-        {
-            base.OnValidate();
-            InitRectTransform();
-        }
+        //protected override void OnValidate()
+        //{
+        //    base.OnValidate();
+        //    InitRectTransform();
+        //}
 
         private void InitRectTransform()
         {

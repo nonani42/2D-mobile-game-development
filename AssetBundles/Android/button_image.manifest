@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 181727855
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6ee3ea57db44bb27347f513b82132030
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c90fc19e2679e5295d10bd00f33cb4c3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/_Core/Sprites/Buttons/button/board.png
+- Assets/_Core/Sprites/Buttons/button/button_square.png
+- Assets/_Core/Sprites/Buttons/button/button_round.png
+- Assets/_Core/Sprites/Buttons/button/button_start.png
+- Assets/_Core/Sprites/Buttons/button/button_login.png
+Dependencies: []
