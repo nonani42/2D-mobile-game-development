@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -60, y: 0}
+  m_SizeDelta: {x: -60, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11835560
 MonoBehaviour:
@@ -204,11 +204,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.1
+  m_fontSize: 35.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 8
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -497,7 +497,7 @@ RectTransform:
   m_Children:
   - {fileID: 11835559}
   m_Father: {fileID: 1658103154}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -620,7 +620,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 256, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528213932
 MonoBehaviour:
@@ -770,7 +770,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 256, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &816515778
 MonoBehaviour:
@@ -892,12 +892,12 @@ RectTransform:
   - {fileID: 528213931}
   - {fileID: 816515777}
   m_Father: {fileID: 1658103154}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 1820.0001, y: 256}
+  m_SizeDelta: {x: 1820, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005378905
 MonoBehaviour:
@@ -1325,11 +1325,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271785674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1523971075}
+  m_Father: {fileID: 1658103154}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1717,7 +1717,7 @@ RectTransform:
   m_Children:
   - {fileID: 1457670260}
   m_Father: {fileID: 1658103154}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1836,18 +1836,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3429e0833184a4d478a6a4fd61afb8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dataSpriteBundles:
-  - <NameAssetBundle>k__BackingField: UI_Graphic_Resource_Iron
+  _spriteDataBundles:
+  - <NameAssetBundle>k__BackingField: UI_Graphic_Resource_Coins
     <Image>k__BackingField: {fileID: 1879626838}
-  - <NameAssetBundle>k__BackingField: UI_Graphic_Resource_Tools
+  - <NameAssetBundle>k__BackingField: UI_Graphic_Resource_Food
     <Image>k__BackingField: {fileID: 528213933}
-  - <NameAssetBundle>k__BackingField: UI_Graphic_Resource_Wood
+  - <NameAssetBundle>k__BackingField: UI_Graphic_Resource_Tools
     <Image>k__BackingField: {fileID: 816515779}
-  _dataAudioBundles:
-  - <NameAssetBundle>k__BackingField: click_button
+  _audioDataBundles:
+  - <NameAssetBundle>k__BackingField: music
     <AudioSource>k__BackingField: {fileID: 1271785676}
-  _dataButtonImageBundles:
-  - <NameAssetBundle>k__BackingField: button_login
+  _buttonImageDataBundles:
+  - <NameAssetBundle>k__BackingField: button_round
     <Image>k__BackingField: {fileID: 483229838}
   _loadAssetsButton: {fileID: 1494684800}
   _loadImageButton: {fileID: 483229837}
@@ -1857,13 +1857,13 @@ MonoBehaviour:
     m_SubObjectType: 
   _spawnedButtonsContainer: {fileID: 715941689}
   _spawnAssetButton: {fileID: 1960409851}
+  _addBackgroundButton: {fileID: 1369544611}
+  _removeBackgroundButton: {fileID: 1671128468}
+  _backgroundComponent: {fileID: 1225815022}
   _backgroundSprite:
     m_AssetGUID: 39eeb7e659c9aa841b69d87853c638f9
     m_SubObjectName: 
     m_SubObjectType: 
-  _addBackgroundButton: {fileID: 1369544611}
-  _removeBackgroundButton: {fileID: 1671128468}
-  _backgroundComponent: {fileID: 1225815022}
 --- !u!114 &1523971072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,7 +1912,7 @@ Canvas:
   m_GameObject: {fileID: 1523971070}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1651931164}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1935,7 +1935,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1271785675}
   - {fileID: 1834973210}
   - {fileID: 1658103154}
   m_Father: {fileID: 0}
@@ -2056,11 +2055,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1271785675}
   - {fileID: 1005378904}
   - {fileID: 1494684799}
   - {fileID: 483229836}
   m_Father: {fileID: 1523971075}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2216,7 +2216,7 @@ RectTransform:
   - {fileID: 1006851555}
   - {fileID: 913827572}
   m_Father: {fileID: 1523971075}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2259,7 +2259,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 256, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879626837
 MonoBehaviour:

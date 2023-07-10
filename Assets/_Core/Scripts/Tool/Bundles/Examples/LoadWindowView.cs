@@ -1,15 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using System.Collections.Generic;
-using TMPro;
+using UnityEngine.UI;
 
 namespace Tool.Bundles.Examples
 {
     internal class LoadWindowView : AssetBundleViewBase
     {
-        [Header("Asset Bundles")]
+        [Header("Asset Bundles Buttons")]
         [SerializeField] private Button _loadAssetsButton;
         [SerializeField] private Button _loadImageButton;
 
@@ -18,10 +17,11 @@ namespace Tool.Bundles.Examples
         [SerializeField] private RectTransform _spawnedButtonsContainer;
         [SerializeField] private Button _spawnAssetButton;
 
-        [SerializeField] private AssetReference _backgroundSprite;
+        [Header("Addressable Background")]
         [SerializeField] private Button _addBackgroundButton;
         [SerializeField] private Button _removeBackgroundButton;
         [SerializeField] private Image _backgroundComponent;
+        [SerializeField] private AssetReference _backgroundSprite;
 
 
         private readonly List<AsyncOperationHandle<GameObject>> _addressablePrefabs =
@@ -30,11 +30,10 @@ namespace Tool.Bundles.Examples
         private AsyncOperationHandle<Sprite> _addressableBackground;
 
 
-
         private void Start()
         {
             _loadAssetsButton.onClick.AddListener(LoadAssets);
-            _loadImageButton.onClick.AddListener(LoadButtonImage);
+            _loadImageButton.onClick.AddListener(LoadButtonBackground);
 
             _spawnAssetButton.onClick.AddListener(SpawnButtons);
 
@@ -60,37 +59,46 @@ namespace Tool.Bundles.Examples
         private void LoadAssets()
         {
             _loadAssetsButton.interactable = false;
-            StartCoroutine(DownloadAssetBundles());
+            StartCoroutine(ImplementSpriteBundles());
+            StartCoroutine(ImplementAudioBundles());
         }
 
-        private void LoadButtonImage()
+        private void LoadButtonBackground()
         {
             _loadImageButton.interactable = false;
-            StartCoroutine(DownloadButtonImageBundles());
+            StartCoroutine(ImplementButtonImageBundles());
         }
         #endregion
 
         #region Adressables
         private void AddBackground()
         {
-            _addressableBackground = Addressables.LoadAssetAsync<Sprite>(_backgroundSprite);
-            _addressableBackground.Completed += SetBackground;
-        }
-
-        private void SetBackground(AsyncOperationHandle<Sprite> adressable)
-        {
-            _backgroundComponent.sprite = adressable.Result;
+            if (!_addressableBackground.IsValid())
+            {
+                _addressableBackground = Addressables.LoadAssetAsync<Sprite>(_backgroundSprite);
+                _addressableBackground.Completed += OnBackgroundLoaded;
+            }
         }
 
         [ContextMenu(nameof(RemoveBackground))]
         private void RemoveBackground()
         {
-            if (!_addressableBackground.IsValid())
-                return;
-            _addressableBackground.Completed -= SetBackground;
-            Addressables.Release(_addressableBackground);
-            _backgroundComponent.sprite = null;
+            if (_addressableBackground.IsValid())
+            {
+                _addressableBackground.Completed -= OnBackgroundLoaded;
+                Addressables.Release(_addressableBackground);
+
+                SetBackground(null);
+            }
         }
+
+        private void OnBackgroundLoaded(AsyncOperationHandle<Sprite> asyncOperationHandle)
+        {
+            asyncOperationHandle.Completed -= OnBackgroundLoaded;
+            SetBackground(asyncOperationHandle.Result);
+        }
+
+        private void SetBackground(Sprite sprite) => _backgroundComponent.sprite = sprite;
 
         private void SpawnButtons()
         {
