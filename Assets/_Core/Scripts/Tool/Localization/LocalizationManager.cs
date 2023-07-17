@@ -70,7 +70,7 @@ namespace Tool.Localization
                                     structure.changeImage.sprite = assetHandle.Result;
                                 else
                                 {
-                                    string errorMessage = $"[{GetType().Name}] Could not load String Table: {assetHandle.OperationException}";
+                                    string errorMessage = $"[{GetType().Name}] Could not load Asset Table: {assetHandle.OperationException}";
                                     Debug.LogError(errorMessage);
                                 }
                             };

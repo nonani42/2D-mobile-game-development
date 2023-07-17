@@ -23,7 +23,7 @@ namespace Tool.Localization
         }
 
 
-        protected virtual void OnStarted() { ChangeLanguage(1); }
+        protected virtual void OnStarted() { }
         protected virtual void OnDestroyed() { }
 
 

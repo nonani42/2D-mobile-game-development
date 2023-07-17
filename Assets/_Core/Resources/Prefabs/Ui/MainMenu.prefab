@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6188794843812496873}
   - component: {fileID: 9215429803724355615}
   - component: {fileID: 8216703190981628512}
+  - component: {fileID: 764036176014342700}
+  - component: {fileID: 9218457360856031506}
   m_Layer: 5
   m_Name: ChangeLanguage
   m_TagString: Untagged
@@ -68,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 53c716b4f614f5546b15e7c04c91e20a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -135,6 +137,78 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &764036176014342700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405844368257748653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239646014864912384
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2611924572715914468}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &9218457360856031506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405844368257748653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 15394540384256
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9215429803724355615}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &504553748829768770
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0a2e0b1cfe4d7f54986fe3a703db1c0c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -354,6 +428,8 @@ GameObject:
   - component: {fileID: 6057769820315644180}
   - component: {fileID: 3694996525397083537}
   - component: {fileID: 8128267324114244019}
+  - component: {fileID: 7448493390396887554}
+  - component: {fileID: 4408776226025298444}
   m_Layer: 5
   m_Name: DailyReward
   m_TagString: Untagged
@@ -458,6 +534,78 @@ MonoBehaviour:
   _button: {fileID: 6057769820315644180}
   _audioSource: {fileID: 0}
   _audioClip: {fileID: 0}
+--- !u!114 &7448493390396887554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825132258204156803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239646216225058816
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3132738385984212730}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &4408776226025298444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825132258204156803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 501875503104
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7846464997735743266}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &887898719112217274
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d32a2a4e62f335a4197adf8840bea4ff, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -596,7 +744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d32a2a4e62f335a4197adf8840bea4ff, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -864,7 +1012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start Game
+  m_text: Start game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1078,6 +1226,8 @@ GameObject:
   - component: {fileID: 3442011110078296408}
   - component: {fileID: 2713738989723426322}
   - component: {fileID: 5894399196208457944}
+  - component: {fileID: 1253744047095994548}
+  - component: {fileID: 6135323247398827322}
   m_Layer: 5
   m_Name: Shed
   m_TagString: Untagged
@@ -1182,6 +1332,78 @@ MonoBehaviour:
   _button: {fileID: 3442011110078296408}
   _audioSource: {fileID: 0}
   _audioClip: {fileID: 0}
+--- !u!114 &1253744047095994548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355375007463569096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239646281089970176
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7933470232937821072}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &6135323247398827322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355375007463569096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 552735633408
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1715597212575786683}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1955044480589834844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,6 +1615,8 @@ GameObject:
   - component: {fileID: 4012727613815735783}
   - component: {fileID: 3969299021627683786}
   - component: {fileID: 483680322481041201}
+  - component: {fileID: 6964203384128022788}
+  - component: {fileID: 8234912611121465102}
   m_Layer: 5
   m_Name: BuyProductButton
   m_TagString: Untagged
@@ -1497,6 +1721,78 @@ MonoBehaviour:
   _curveEase: 1
   _duration: 0.6
   _strength: 30
+--- !u!114 &6964203384128022788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590375255849645188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239645993016782848
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 416430200109049580}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &8234912611121465102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590375255849645188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 443935387648
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2851233046640421110}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2716724307907107142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,7 +1857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7df2b50b9f17f4e4db7a053c64f4a7e3, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1707,6 +2003,8 @@ GameObject:
   - component: {fileID: 871876899705815074}
   - component: {fileID: 2046877770162043010}
   - component: {fileID: 5027191567132496080}
+  - component: {fileID: 659817751013483094}
+  - component: {fileID: 561401916371413815}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1811,6 +2109,78 @@ MonoBehaviour:
   _button: {fileID: 871876899705815074}
   _audioSource: {fileID: 0}
   _audioClip: {fileID: 0}
+--- !u!114 &659817751013483094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247970735011919906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239646316791885824
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5917630859577512927}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &561401916371413815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3247970735011919906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 586977931264
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6870395031242207177}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3362502646258824450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +2295,8 @@ GameObject:
   - component: {fileID: 5441526436421094479}
   - component: {fileID: 1349844329076662872}
   - component: {fileID: 4176720503965908545}
+  - component: {fileID: 4111728899060123785}
+  - component: {fileID: 776367994439148790}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2029,6 +2401,78 @@ MonoBehaviour:
   _button: {fileID: 5441526436421094479}
   _audioSource: {fileID: 0}
   _audioClip: {fileID: 0}
+--- !u!114 &4111728899060123785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279821671311029660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239646175703887872
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6569169044523211005}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &776367994439148790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279821671311029660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 477812781056
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1191177574402344178}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5332694018436008171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,7 +2537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: English
+  m_text: Change Language
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2226,7 +2670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d32a2a4e62f335a4197adf8840bea4ff, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2300,7 +2744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7df2b50b9f17f4e4db7a053c64f4a7e3, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2448,7 +2892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d32a2a4e62f335a4197adf8840bea4ff, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2469,6 +2913,7 @@ GameObject:
   - component: {fileID: 5660545872060543822}
   - component: {fileID: 6506296579413713210}
   - component: {fileID: 3595535630769894839}
+  - component: {fileID: 4064720684197502246}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -2533,8 +2978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _changeLanguage: {fileID: 8216703190981628512}
-  _tableName: Main
-  _assetTableName: MainAsset
+  _tableName: MainMenuStringTable
+  _assetTableName: MainMenuAssetTable
   _structures:
   - changeText: {fileID: 4933313650896573404}
     changeImage: {fileID: 6096406609737477427}
@@ -2560,6 +3005,19 @@ MonoBehaviour:
   - changeText: {fileID: 5917630859577512927}
     changeImage: {fileID: 6870395031242207177}
     localizationTag: exit_game
+--- !u!114 &4064720684197502246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015533690559672758}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647d72fb946762c43ae9124e019418dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _changeLanguage: {fileID: 8216703190981628512}
 --- !u!1 &6065905000173057125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +3322,8 @@ GameObject:
   - component: {fileID: 5608503817596840365}
   - component: {fileID: 4675853657497187324}
   - component: {fileID: 42812018069093418}
+  - component: {fileID: 1309942412954568315}
+  - component: {fileID: 3745957527088631616}
   m_Layer: 5
   m_Name: RewardedAdsButton
   m_TagString: Untagged
@@ -2968,6 +3428,78 @@ MonoBehaviour:
   _curveEase: 1
   _duration: 0.6
   _strength: 30
+--- !u!114 &1309942412954568315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389363656245868887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239645782177509376
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4933313650896573404}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &3745957527088631616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389363656245868887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 423223914496
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6096406609737477427}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6888920513732523659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,7 +3819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Exit Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3420,7 +3952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rewarded Ads
+  m_text: Watch Ad
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3447,7 +3979,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.6
+  m_fontSize: 48.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3634,6 +4166,8 @@ GameObject:
   - component: {fileID: 5342857100112835716}
   - component: {fileID: 1981665152809051033}
   - component: {fileID: 6146310593098196216}
+  - component: {fileID: 7190858077739049643}
+  - component: {fileID: 8248649096786419295}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -3738,3 +4272,75 @@ MonoBehaviour:
   _button: {fileID: 5342857100112835716}
   _audioSource: {fileID: 0}
   _audioClip: {fileID: 0}
+--- !u!114 &7190858077739049643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898454844111016424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:3a69f6d6fe619441494d1b07d7c6d064
+    m_TableEntryReference:
+      m_KeyId: 239646297355481088
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1152950470359065363}
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
+--- !u!114 &8248649096786419295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898454844111016424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:97b3cd1895dc46d4583d5cb180bd5f46
+    m_TableEntryReference:
+      m_KeyId: 566107074560
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2978644375438813802}
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

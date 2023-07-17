@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: b80ad458f4b10db439d0a0faa780153f
   m_SerializeEntries:
+  - m_GUID: d32a2a4e62f335a4197adf8840bea4ff
+    m_Address: button_login
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-ru-RU
   - m_GUID: 7df2b50b9f17f4e4db7a053c64f4a7e3
     m_Address: button_round
     m_ReadOnly: 1
@@ -24,12 +30,6 @@ MonoBehaviour:
     - Locale-en
   - m_GUID: 0a2e0b1cfe4d7f54986fe3a703db1c0c
     m_Address: button_start
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Locale-ru-RU
-  - m_GUID: d32a2a4e62f335a4197adf8840bea4ff
-    m_Address: button_login
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
   m_Name: Main Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: Main
+  m_TableCollectionName: MainMenuStringTable
   m_TableCollectionNameGuidString: 3a69f6d6fe619441494d1b07d7c6d064
   m_Entries:
   - m_Id: 22199394304

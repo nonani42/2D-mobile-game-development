@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
   m_Name: MainAsset Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: MainAsset
+  m_TableCollectionName: MainMenuAssetTable
   m_TableCollectionNameGuidString: 97b3cd1895dc46d4583d5cb180bd5f46
   m_Entries:
   - m_Id: 423223914496
@@ -50,56 +50,49 @@ MonoBehaviour:
   m_Metadata:
     m_Items:
     - id: 0
-    - id: 1
   m_KeyGenerator:
-    id: 2
+    id: 1
   references:
     version: 1
     00000000:
       type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries:
-        - m_KeyId: 423223914496
-          m_TableCodes:
-          - en
-          - ru-RU
-        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-    00000001:
-      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_Entries:
-        - m_KeyId: 443935387648
-          m_TableCodes:
-          - en
-          - ru-RU
         - m_KeyId: 477812781056
           m_TableCodes:
           - en
           - ru-RU
         - m_KeyId: 501875503104
           m_TableCodes:
-          - en
           - ru-RU
+          - en
         - m_KeyId: 552735633408
           m_TableCodes:
-          - en
           - ru-RU
+          - en
         - m_KeyId: 566107074560
           m_TableCodes:
-          - en
           - ru-RU
+          - en
         - m_KeyId: 586977931264
           m_TableCodes:
-          - en
           - ru-RU
+          - en
+        - m_KeyId: 423223914496
+          m_TableCodes:
+          - ru-RU
+          - en
+        - m_KeyId: 443935387648
+          m_TableCodes:
+          - ru-RU
+          - en
         - m_KeyId: 15394540384256
           m_TableCodes:
           - en
           - ru-RU
-        m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-    00000002:
+    00000001:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
         asm: Unity.Localization}
       data:
