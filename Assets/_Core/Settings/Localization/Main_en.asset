@@ -22,5 +22,37 @@ MonoBehaviour:
     m_Localized: Translate this text
     m_Metadata:
       m_Items: []
+  - m_Id: 239646316791885824
+    m_Localized: Exit Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646297355481088
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646281089970176
+    m_Localized: Shed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646216225058816
+    m_Localized: Daily Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646175703887872
+    m_Localized: Start game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646014864912384
+    m_Localized: Change Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239645993016782848
+    m_Localized: Buy Product
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239645782177509376
+    m_Localized: Watch Ad
+    m_Metadata:
+      m_Items: []
   references:
     version: 1

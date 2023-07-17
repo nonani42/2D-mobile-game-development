@@ -1,5 +1,4 @@
 ﻿using TMPro;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;

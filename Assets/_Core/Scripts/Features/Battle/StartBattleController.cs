@@ -10,10 +10,10 @@ namespace Features.Battle
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Battle/StartBattleView");
 
         private readonly StartBattleView _view;
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
 
 
-        public StartBattleController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public StartBattleController(Transform placeForUi, PlayerProfile profilePlayer)
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);

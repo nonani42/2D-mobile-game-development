@@ -19,6 +19,38 @@ MonoBehaviour:
     m_Key: translate_text
     m_Metadata:
       m_Items: []
+  - m_Id: 239645782177509376
+    m_Key: watch_reward_ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239645993016782848
+    m_Key: buy_product
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646014864912384
+    m_Key: change_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646175703887872
+    m_Key: start_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646216225058816
+    m_Key: daily_reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646281089970176
+    m_Key: shed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646297355481088
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239646316791885824
+    m_Key: exit_game
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -26,6 +58,7 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
       data:
         m_CustomEpoch: 1632412146711

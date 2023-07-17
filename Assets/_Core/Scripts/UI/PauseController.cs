@@ -9,14 +9,14 @@ namespace UI
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/PauseButtonView");
 
         private readonly PauseView _view;
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
         private readonly Transform _placeForUi;
         private readonly Pause _pause;
 
         private PauseMenuController _pauseMenuController;
 
 
-        public PauseController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public PauseController(Transform placeForUi, PlayerProfile profilePlayer)
         {
             _profilePlayer = profilePlayer;
             _placeForUi = placeForUi;
@@ -51,7 +51,7 @@ namespace UI
             return objectView.GetComponent<PauseView>();
         }
 
-        private PauseMenuController CreatePauseMenuController(Transform placeForUi, ProfilePlayer profilePlayer, Pause pause)
+        private PauseMenuController CreatePauseMenuController(Transform placeForUi, PlayerProfile profilePlayer, Pause pause)
         {
             var pauseMenuController = new PauseMenuController(placeForUi, profilePlayer, pause);
             AddController(pauseMenuController);

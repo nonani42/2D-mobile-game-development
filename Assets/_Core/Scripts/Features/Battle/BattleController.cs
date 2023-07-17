@@ -14,7 +14,7 @@ namespace Features.Battle
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Battle/BattleView");
 
         private readonly Transform _placeForUI;
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
         private readonly BattleView _view;
 
 
@@ -28,7 +28,7 @@ namespace Features.Battle
         private IEncounterResult[] _encounterResultConfigs;
 
 
-        public BattleController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public BattleController(Transform placeForUi, PlayerProfile profilePlayer)
         {
             _placeForUI = placeForUi;
             _profilePlayer = profilePlayer;

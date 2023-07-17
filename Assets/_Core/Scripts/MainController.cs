@@ -10,7 +10,7 @@ namespace CarGame
     class MainController : BaseController
     {
         private readonly Transform _placeForUI;
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
 
         private MainMenuController _mainMenuController;
         private GameController _gameController;
@@ -22,7 +22,7 @@ namespace CarGame
         private ShedContext _shedContext;
 
 
-        public MainController(Transform placeForUI, ProfilePlayer profilePlayer)
+        public MainController(Transform placeForUI, PlayerProfile profilePlayer)
         {
             _placeForUI = placeForUI;
             _profilePlayer = profilePlayer;

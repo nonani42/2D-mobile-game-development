@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MainAsset Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MainAsset
+  m_TableCollectionNameGuidString: 97b3cd1895dc46d4583d5cb180bd5f46
+  m_Entries:
+  - m_Id: 423223914496
+    m_Key: watch_reward_ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 443935387648
+    m_Key: buy_product
+    m_Metadata:
+      m_Items: []
+  - m_Id: 477812781056
+    m_Key: start_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 501875503104
+    m_Key: daily_reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 552735633408
+    m_Key: shed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 566107074560
+    m_Key: settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 586977931264
+    m_Key: exit_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15394540384256
+    m_Key: change_language
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - id: 0
+    - id: 1
+  m_KeyGenerator:
+    id: 2
+  references:
+    version: 1
+    00000000:
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 423223914496
+          m_TableCodes:
+          - en
+          - ru-RU
+        m_TypeString: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    00000001:
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 443935387648
+          m_TableCodes:
+          - en
+          - ru-RU
+        - m_KeyId: 477812781056
+          m_TableCodes:
+          - en
+          - ru-RU
+        - m_KeyId: 501875503104
+          m_TableCodes:
+          - en
+          - ru-RU
+        - m_KeyId: 552735633408
+          m_TableCodes:
+          - en
+          - ru-RU
+        - m_KeyId: 566107074560
+          m_TableCodes:
+          - en
+          - ru-RU
+        - m_KeyId: 586977931264
+          m_TableCodes:
+          - en
+          - ru-RU
+        - m_KeyId: 15394540384256
+          m_TableCodes:
+          - en
+          - ru-RU
+        m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    00000002:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1689550703369

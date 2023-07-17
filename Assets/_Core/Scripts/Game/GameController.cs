@@ -25,7 +25,7 @@ namespace CarGame
         private readonly PauseController pauseController;
 
 
-        public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public GameController(Transform placeForUi, PlayerProfile profilePlayer)
         {
             leftMoveDiff = new SubscriptionProperty<float>();
             rightMoveDiff = new SubscriptionProperty<float>();

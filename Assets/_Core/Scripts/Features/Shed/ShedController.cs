@@ -14,7 +14,7 @@ namespace Features.Shed
     internal class ShedController : BaseController, IShedController
     {
         private readonly IShedView _shedView;
-        private readonly ProfilePlayer _playerProfile;
+        private readonly PlayerProfile _playerProfile;
         private readonly IUpgradeHandlersRepository _upgradeHandlersRepository;
 
         public List<string> _rollbackInventory;
@@ -38,7 +38,7 @@ namespace Features.Shed
         }
 
         public ShedController(
-            [NotNull] ProfilePlayer profilePlayer,
+            [NotNull] PlayerProfile profilePlayer,
             [NotNull] IShedView shedView,
             [NotNull] IUpgradeHandlersRepository upgradeHandlersRepository)
         {

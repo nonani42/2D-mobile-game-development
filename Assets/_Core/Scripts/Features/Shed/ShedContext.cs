@@ -14,7 +14,7 @@ namespace Features.Shed
         private readonly ResourcePath _dataSourceShedPath = new ResourcePath("Configs/Shed/UpgradeItemConfigDataSource");
 
 
-        public ShedContext(Transform placeForUi, ProfilePlayer profilePlayer)
+        public ShedContext(Transform placeForUi, PlayerProfile profilePlayer)
         {
             if (placeForUi == null)
                 throw new ArgumentNullException(nameof(placeForUi));
@@ -25,7 +25,7 @@ namespace Features.Shed
         }
 
 
-        private ShedController CreateController(Transform placeForUi, ProfilePlayer profilePlayer)
+        private ShedController CreateController(Transform placeForUi, PlayerProfile profilePlayer)
         {
             IShedView view = LoadShedView(placeForUi);
             IUpgradeHandlersRepository repository = CreateHandlerRepository();

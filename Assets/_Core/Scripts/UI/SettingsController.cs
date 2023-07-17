@@ -8,10 +8,10 @@ namespace CarGame
     internal class SettingsController : BaseController
     {
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/SettingsMenu");
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
         private readonly SettingsView _view;
 
-        public SettingsController(Transform placeForUI, ProfilePlayer profilePlayer)
+        public SettingsController(Transform placeForUI, PlayerProfile profilePlayer)
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUI);

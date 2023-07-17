@@ -8,10 +8,10 @@ namespace CarGame
     internal class MainMenuController : BaseController
     {
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/MainMenu");
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
         private readonly MainMenuView _view;
 
-        public MainMenuController(Transform placeForUI, ProfilePlayer profilePlayer)
+        public MainMenuController(Transform placeForUI, PlayerProfile profilePlayer)
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUI);

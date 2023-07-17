@@ -10,10 +10,10 @@ namespace UI
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/BackToMenuView");
 
         private readonly BackToMenuView _view;
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
 
 
-        public BackToMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public BackToMenuController(Transform placeForUi, PlayerProfile profilePlayer)
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);

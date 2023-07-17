@@ -9,11 +9,11 @@ namespace UI
         private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/PauseMenuView");
 
         private readonly PauseMenuView _view;
-        private readonly ProfilePlayer _profilePlayer;
+        private readonly PlayerProfile _profilePlayer;
         private readonly Pause _pause;
 
 
-        public PauseMenuController(Transform placeForUi, ProfilePlayer profilePlayer, Pause pause)
+        public PauseMenuController(Transform placeForUi, PlayerProfile profilePlayer, Pause pause)
         {
             _profilePlayer = profilePlayer;
 

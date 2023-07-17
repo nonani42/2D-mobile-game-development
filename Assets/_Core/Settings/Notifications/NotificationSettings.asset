@@ -17,6 +17,10 @@ MonoBehaviour:
     <Name>k__BackingField: Main Channel
     <Description>k__BackingField: It is the main channel!
     _importance: 4
+  - <Id>k__BackingField: notification_reward
+    <Name>k__BackingField: Reward Channel
+    <Description>k__BackingField: Reward updates
+    _importance: 4
   <Notifications>k__BackingField:
   - <Id>k__BackingField: notification_id
     <Title>k__BackingField: Game Notification
@@ -25,8 +29,20 @@ MonoBehaviour:
     <FireTime>k__BackingField:
       <Year>k__BackingField: 2023
       <Month>k__BackingField: 7
-      <Day>k__BackingField: 16
-      <Hour>k__BackingField: 20
+      <Day>k__BackingField: 17
+      <Hour>k__BackingField: 2
       <Minute>k__BackingField: 0
     <RepeatInterval>k__BackingField:
       <Seconds>k__BackingField: 10
+  - <Id>k__BackingField: notification_reward
+    <Title>k__BackingField: Reward Notification
+    <Text>k__BackingField: It is time for your reward!
+    <RepeatType>k__BackingField: 0
+    <FireTime>k__BackingField:
+      <Year>k__BackingField: 2023
+      <Month>k__BackingField: 7
+      <Day>k__BackingField: 17
+      <Hour>k__BackingField: 2
+      <Minute>k__BackingField: 0
+    <RepeatInterval>k__BackingField:
+      <Seconds>k__BackingField: 0

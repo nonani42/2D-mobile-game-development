@@ -4,7 +4,7 @@ using Features.Rewards.Currency;
 
 namespace Profile
 {
-    internal class ProfilePlayer
+    internal class PlayerProfile
     {
         public readonly SubscriptionProperty<GameState> CurrentState;
         public readonly CarModel CurrentCar;
@@ -12,7 +12,7 @@ namespace Profile
         public readonly CurrencyModel Currency;
 
 
-        public ProfilePlayer(float speedCar, float jumpHeight)
+        public PlayerProfile(float speedCar, float jumpHeight)
         {
             CurrentState = new SubscriptionProperty<GameState>();
             CurrentCar = new CarModel(speedCar, jumpHeight);
@@ -20,7 +20,7 @@ namespace Profile
             Currency = new CurrencyModel();
         }
 
-        public ProfilePlayer(float speedCar, float jumpHeight, GameState initialState) : this(speedCar, jumpHeight)
+        public PlayerProfile(float speedCar, float jumpHeight, GameState initialState) : this(speedCar, jumpHeight)
         {
             CurrentState.Value = initialState;
         }

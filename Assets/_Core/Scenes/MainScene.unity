@@ -702,3 +702,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeForUI: {fileID: 686931106}
+  _settings: {fileID: 11400000, guid: b27eb0e1647972945916c8fc19d800c0, type: 2}

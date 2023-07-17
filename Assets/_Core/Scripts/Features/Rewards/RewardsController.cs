@@ -17,7 +17,7 @@ namespace Features.Rewards
         private RewardsModel _model;
         private readonly RewardSlotConfigDataSource _rewardSlotConfigDataSource;
 
-        private ProfilePlayer _profilePlayer;
+        private PlayerProfile _profilePlayer;
 
         private readonly float _timeDeadline;
         private readonly float _timeCoolDown;
@@ -28,7 +28,7 @@ namespace Features.Rewards
         private bool _isGetReward;
 
 
-        public RewardsController(Transform placeForUi, ProfilePlayer profilePlayer)
+        public RewardsController(Transform placeForUi, PlayerProfile profilePlayer)
         {
             _view = LoadView(placeForUi);
 
